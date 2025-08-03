@@ -1,0 +1,1609 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADMYBRAND AI Suite - Revolutionary AI-Powered Marketing Platform</title>
+    <meta name="description" content="Transform your marketing with AI-powered tools. Generate campaigns, analyze performance, and scale your brand with ADMYBRAND's intelligent marketing suite.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            50: '#eef2ff',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                            900: '#312e81'
+                        },
+                        secondary: {
+                            500: '#8b5cf6',
+                            600: '#7c3aed'
+                        },
+                        accent: {
+                            500: '#06b6d4',
+                            600: '#0891b2'
+                        }
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.6s ease-out',
+                        'fade-in': 'fadeIn 0.8s ease-out',
+                        'slide-in-left': 'slideInLeft 0.7s ease-out',
+                        'bounce-gentle': 'bounceGentle 2s infinite',
+                        'pulse-soft': 'pulseSoft 3s infinite',
+                    },
+                    backdropBlur: {
+                        'xs': '2px',
+                    }
+                }
+            }
+        };
+    </script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes bounceGentle {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+        
+        @keyframes pulseSoft {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.7;
+            }
+        }
+        
+        /* Glassmorphism utility classes */
+        .glass {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .glass-dark {
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+    </style>
+</head>
+
+<body class="font-inter bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 text-slate-900 overflow-x-hidden">
+    
+    <!-- @COMPONENT: Navigation -->
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 glass backdrop-blur-md border-b border-white/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- @COMPONENT: Logo -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-xl flex items-center justify-center">
+                        <i class="fas fa-brain text-white text-lg"></i>
+                    </div>
+                    <span class="text-xl font-bold bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">ADMYBRAND</span>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#features" class="text-slate-700 hover:text-primary-600 font-medium transition-colors">Features</a>
+                    <a href="#pricing" class="text-slate-700 hover:text-primary-600 font-medium transition-colors">Pricing</a>
+                    <a href="#testimonials" class="text-slate-700 hover:text-primary-600 font-medium transition-colors">Reviews</a>
+                    <a href="#resources" class="text-slate-700 hover:text-primary-600 font-medium transition-colors">Resources</a>
+                    <a href="#contact" class="text-slate-700 hover:text-primary-600 font-medium transition-colors">Contact</a>
+                </div>
+                
+                <!-- CTA Buttons -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <!-- @COMPONENT: Button - Secondary -->
+                    <button class="px-4 py-2 text-slate-700 hover:text-slate-900 font-medium transition-colors">
+                        Sign In
+                    </button>
+                    <!-- @COMPONENT: Button - Primary -->
+                    <button class="px-6 py-2 bg-gradient-to-r from-primary-500 to-primary-600 text-white rounded-xl font-medium hover:from-primary-600 hover:to-primary-700 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl">
+                        Start Free Trial
+                    </button>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden p-2 rounded-lg hover:bg-white/10 transition-colors" data-mobile-menu-toggle>
+                    <i class="fas fa-bars text-slate-700"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="md:hidden glass-dark border-t border-white/10 hidden" data-mobile-menu>
+            <div class="px-4 py-4 space-y-3">
+                <a href="#features" class="block py-2 text-white hover:text-primary-300 transition-colors">Features</a>
+                <a href="#pricing" class="block py-2 text-white hover:text-primary-300 transition-colors">Pricing</a>
+                <a href="#testimonials" class="block py-2 text-white hover:text-primary-300 transition-colors">Reviews</a>
+                <a href="#resources" class="block py-2 text-white hover:text-primary-300 transition-colors">Resources</a>
+                <a href="#contact" class="block py-2 text-white hover:text-primary-300 transition-colors">Contact</a>
+                <div class="pt-4 border-t border-white/20">
+                    <button class="w-full mb-3 px-4 py-2 text-white border border-white/30 rounded-xl hover:bg-white/10 transition-colors">
+                        Sign In
+                    </button>
+                    <button class="w-full px-4 py-2 bg-gradient-to-r from-primary-500 to-primary-600 text-white rounded-xl font-medium hover:from-primary-600 hover:to-primary-700 transition-all">
+                        Start Free Trial
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- @END_COMPONENT: Navigation -->
+
+    <!-- @COMPONENT: Hero Section -->
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
+        <!-- Animated Background Elements -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-to-r from-primary-400/20 to-secondary-400/20 rounded-full blur-3xl animate-pulse-soft"></div>
+            <div class="absolute top-3/4 right-1/4 w-96 h-96 bg-gradient-to-r from-accent-400/20 to-primary-400/20 rounded-full blur-3xl animate-pulse-soft" style="animation-delay: 1s;"></div>
+            <div class="absolute bottom-1/4 left-1/2 w-80 h-80 bg-gradient-to-r from-secondary-400/20 to-accent-400/20 rounded-full blur-3xl animate-pulse-soft" style="animation-delay: 2s;"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Hero Content -->
+                <div class="text-center lg:text-left animate-fade-in-up">
+                    <!-- @COMPONENT: Badge -->
+                    <div class="inline-flex items-center px-4 py-2 rounded-full glass border border-primary-200/50 text-primary-700 font-medium mb-6 animate-bounce-gentle">
+                        <i class="fas fa-sparkles mr-2"></i>
+                        <span>Now with GPT-4 Integration</span>
+                    </div>
+                    
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+                        <span class="bg-gradient-to-r from-slate-900 via-primary-600 to-secondary-600 bg-clip-text text-transparent">
+                            Transform Your Marketing
+                        </span>
+                        <br>
+                        <span class="text-slate-800">with AI Intelligence</span>
+                    </h1>
+                    
+                    <p class="text-xl text-slate-600 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                        Generate high-converting campaigns, analyze performance with precision, and scale your brand exponentially using our revolutionary AI-powered marketing suite.
+                    </p>
+                    
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <!-- @COMPONENT: Button - Primary Large -->
+                        <button class="px-8 py-4 bg-gradient-to-r from-primary-500 to-primary-600 text-white rounded-2xl font-semibold text-lg hover:from-primary-600 hover:to-primary-700 transform hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl">
+                            <i class="fas fa-rocket mr-2"></i>
+                            Start Free 14-Day Trial
+                        </button>
+                        
+                        <!-- @COMPONENT: Button - Secondary Large -->
+                        <button class="px-8 py-4 glass border border-slate-200 text-slate-700 rounded-2xl font-semibold text-lg hover:bg-white/50 transition-all duration-300 flex items-center justify-center group">
+                            <i class="fas fa-play mr-2 group-hover:text-primary-600 transition-colors"></i>
+                            Watch Demo
+                        </button>
+                    </div>
+                    
+                    <!-- Trust Indicators -->
+                    <div class="mt-12 animate-fade-in" style="animation-delay: 0.3s;">
+                        <p class="text-sm text-slate-500 mb-4 font-medium">Trusted by 50,000+ marketing teams worldwide</p>
+                        <div class="flex items-center justify-center lg:justify-start space-x-8 opacity-60">
+                            <div class="text-2xl font-bold text-slate-600">Microsoft</div>
+                            <div class="text-2xl font-bold text-slate-600">Shopify</div>
+                            <div class="text-2xl font-bold text-slate-600">Stripe</div>
+                            <div class="text-2xl font-bold text-slate-600">Airbnb</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Hero Visual -->
+                <div class="relative animate-slide-in-left" style="animation-delay: 0.5s;">
+                    <!-- @COMPONENT: Card - Hero Dashboard -->
+                    <div class="relative glass rounded-3xl p-8 shadow-2xl border border-white/30">
+                        <!-- Dashboard Header -->
+                        <div class="flex items-center justify-between mb-6">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-3 h-3 bg-red-400 rounded-full"></div>
+                                <div class="w-3 h-3 bg-yellow-400 rounded-full"></div>
+                                <div class="w-3 h-3 bg-green-400 rounded-full"></div>
+                            </div>
+                            <span class="text-sm text-slate-600 font-medium">ADMYBRAND Dashboard</span>
+                        </div>
+                        
+                        <!-- Modern AI marketing dashboard preview with stunning visuals -->
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+                             alt="AI Marketing Dashboard showing analytics, campaign performance, and intelligent insights" 
+                             class="rounded-2xl shadow-lg w-full h-auto transform hover:scale-105 transition-transform duration-500" />
+                        
+                        <!-- Floating Elements -->
+                        <div class="absolute -top-4 -right-4 glass rounded-2xl p-4 animate-bounce-gentle">
+                            <div class="flex items-center space-x-2">
+                                <div class="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
+                                <span class="text-sm font-medium text-slate-700">+247% ROI</span>
+                            </div>
+                        </div>
+                        
+                        <div class="absolute -bottom-4 -left-4 glass rounded-2xl p-4 animate-bounce-gentle" style="animation-delay: 1s;">
+                            <div class="flex items-center space-x-2">
+                                <i class="fas fa-brain text-primary-500"></i>
+                                <span class="text-sm font-medium text-slate-700">AI Processing</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Hero Section -->
+
+    <!-- @COMPONENT: Features Section -->
+    <!-- Features Section -->
+    <section id="features" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-16 animate-fade-in-up">
+                <div class="inline-flex items-center px-4 py-2 rounded-full bg-primary-100 text-primary-700 font-medium mb-6">
+                    <i class="fas fa-magic mr-2"></i>
+                    <span>Powerful Features</span>
+                </div>
+                <h2 class="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
+                    Everything You Need to
+                    <span class="bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">
+                        Scale Your Marketing
+                    </span>
+                </h2>
+                <p class="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+                    Our AI-powered suite combines cutting-edge technology with intuitive design to deliver unprecedented marketing results.
+                </p>
+            </div>
+            
+            <!-- Features Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- @COMPONENT: FeatureCard 1 -->
+                <div class="group glass rounded-3xl p-8 hover:shadow-2xl transition-all duration-500 hover:transform hover:scale-105 border border-white/30 animate-fade-in-up">
+                    <div class="w-16 h-16 bg-gradient-to-r from-primary-500 to-primary-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-robot text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4">AI Campaign Generator</h3>
+                    <p class="text-slate-600 leading-relaxed mb-6">
+                        Create high-converting ad campaigns in seconds with our advanced AI that learns from millions of successful campaigns.
+                    </p>
+                    <div class="flex items-center text-primary-600 font-medium group-hover:text-primary-700 transition-colors">
+                        <span>Learn more</span>
+                        <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </div>
+                </div>
+                
+                <!-- @COMPONENT: FeatureCard 2 -->
+                <div class="group glass rounded-3xl p-8 hover:shadow-2xl transition-all duration-500 hover:transform hover:scale-105 border border-white/30 animate-fade-in-up" style="animation-delay: 0.1s;">
+                    <div class="w-16 h-16 bg-gradient-to-r from-secondary-500 to-secondary-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-chart-line text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4">Smart Analytics</h3>
+                    <p class="text-slate-600 leading-relaxed mb-6">
+                        Get actionable insights with predictive analytics that identify opportunities and optimize performance automatically.
+                    </p>
+                    <div class="flex items-center text-secondary-600 font-medium group-hover:text-secondary-700 transition-colors">
+                        <span>Learn more</span>
+                        <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </div>
+                </div>
+                
+                <!-- @COMPONENT: FeatureCard 3 -->
+                <div class="group glass rounded-3xl p-8 hover:shadow-2xl transition-all duration-500 hover:transform hover:scale-105 border border-white/30 animate-fade-in-up" style="animation-delay: 0.2s;">
+                    <div class="w-16 h-16 bg-gradient-to-r from-accent-500 to-accent-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-users text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4">Audience Intelligence</h3>
+                    <p class="text-slate-600 leading-relaxed mb-6">
+                        Discover and target your ideal customers with AI-powered audience segmentation and behavioral analysis.
+                    </p>
+                    <div class="flex items-center text-accent-600 font-medium group-hover:text-accent-700 transition-colors">
+                        <span>Learn more</span>
+                        <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </div>
+                </div>
+                
+                <!-- @COMPONENT: FeatureCard 4 -->
+                <div class="group glass rounded-3xl p-8 hover:shadow-2xl transition-all duration-500 hover:transform hover:scale-105 border border-white/30 animate-fade-in-up" style="animation-delay: 0.3s;">
+                    <div class="w-16 h-16 bg-gradient-to-r from-emerald-500 to-emerald-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-palette text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4">Creative Studio</h3>
+                    <p class="text-slate-600 leading-relaxed mb-6">
+                        Generate stunning visuals, copy, and video content with AI that understands your brand voice and style.
+                    </p>
+                    <div class="flex items-center text-emerald-600 font-medium group-hover:text-emerald-700 transition-colors">
+                        <span>Learn more</span>
+                        <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </div>
+                </div>
+                
+                <!-- @COMPONENT: FeatureCard 5 -->
+                <div class="group glass rounded-3xl p-8 hover:shadow-2xl transition-all duration-500 hover:transform hover:scale-105 border border-white/30 animate-fade-in-up" style="animation-delay: 0.4s;">
+                    <div class="w-16 h-16 bg-gradient-to-r from-pink-500 to-pink-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-sync-alt text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4">Auto-Optimization</h3>
+                    <p class="text-slate-600 leading-relaxed mb-6">
+                        Let AI continuously optimize your campaigns for maximum ROI with real-time bidding and budget allocation.
+                    </p>
+                    <div class="flex items-center text-pink-600 font-medium group-hover:text-pink-700 transition-colors">
+                        <span>Learn more</span>
+                        <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </div>
+                </div>
+                
+                <!-- @COMPONENT: FeatureCard 6 -->
+                <div class="group glass rounded-3xl p-8 hover:shadow-2xl transition-all duration-500 hover:transform hover:scale-105 border border-white/30 animate-fade-in-up" style="animation-delay: 0.5s;">
+                    <div class="w-16 h-16 bg-gradient-to-r from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-shield-alt text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4">Brand Protection</h3>
+                    <p class="text-slate-600 leading-relaxed mb-6">
+                        Monitor and protect your brand reputation across all channels with AI-powered sentiment analysis and alerts.
+                    </p>
+                    <div class="flex items-center text-orange-600 font-medium group-hover:text-orange-700 transition-colors">
+                        <span>Learn more</span>
+                        <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Features Section -->
+
+    <!-- @COMPONENT: Pricing Section with Calculator -->
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-24 bg-gradient-to-br from-slate-50 to-blue-50 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-16 animate-fade-in-up">
+                <div class="inline-flex items-center px-4 py-2 rounded-full bg-primary-100 text-primary-700 font-medium mb-6">
+                    <i class="fas fa-calculator mr-2"></i>
+                    <span>Simple Pricing</span>
+                </div>
+                <h2 class="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
+                    Choose Your
+                    <span class="bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">
+                        Growth Plan
+                    </span>
+                </h2>
+                <p class="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed mb-8">
+                    Start free and scale as you grow. All plans include our core AI features with varying limits and advanced capabilities.
+                </p>
+                
+                <!-- Interactive Pricing Calculator -->
+                <div class="glass rounded-2xl p-6 max-w-2xl mx-auto mb-12 border border-white/30">
+                    <h3 class="text-lg font-semibold text-slate-900 mb-4">Calculate Your ROI</h3>
+                    <div class="grid md:grid-cols-3 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">Monthly Ad Spend</label>
+                            <!-- @COMPONENT: Input -->
+                            <input type="number" data-calculator="adSpend" placeholder="10000" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-100 transition-all" value="10000">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">Current ROI</label>
+                            <input type="number" data-calculator="currentROI" placeholder="300" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-100 transition-all" value="300">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">Improvement Goal</label>
+                            <select data-calculator="improvement" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-100 transition-all">
+                                <option value="25">25% increase</option>
+                                <option value="50" selected>50% increase</option>
+                                <option value="75">75% increase</option>
+                                <option value="100">100% increase</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="mt-6 p-4 bg-primary-50 rounded-xl">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-primary-600" data-result="monthlyGain">$5,000</div>
+                            <div class="text-sm text-slate-600">Potential Monthly Revenue Increase</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Pricing Cards -->
+            <div class="grid lg:grid-cols-3 gap-8 mb-16">
+                <!-- @COMPONENT: PricingCard - Starter -->
+                <div class="glass rounded-3xl p-8 border border-white/30 hover:shadow-2xl transition-all duration-500 animate-fade-in-up">
+                    <div class="text-center">
+                        <h3 class="text-2xl font-bold text-slate-900 mb-2">Starter</h3>
+                        <p class="text-slate-600 mb-6">Perfect for small businesses and startups</p>
+                        <div class="mb-8">
+                            <span class="text-5xl font-bold text-slate-900">$29</span>
+                            <span class="text-slate-600">/month</span>
+                        </div>
+                        <button class="w-full py-4 border-2 border-slate-200 text-slate-700 rounded-2xl font-semibold hover:bg-slate-50 transition-all duration-300">
+                            Start Free Trial
+                        </button>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <h4 class="font-semibold text-slate-900 mb-4">Everything you need to start:</h4>
+                        <ul class="space-y-3">
+                            <li class="flex items-center text-slate-600">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                Up to 5 AI-generated campaigns/month
+                            </li>
+                            <li class="flex items-center text-slate-600">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                Basic analytics dashboard
+                            </li>
+                            <li class="flex items-center text-slate-600">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                Email support
+                            </li>
+                            <li class="flex items-center text-slate-600">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                1 team member
+                            </li>
+                            <li class="flex items-center text-slate-600">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                Core integrations
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- @COMPONENT: PricingCard - Professional (Featured) -->
+                <div class="relative glass rounded-3xl p-8 border-2 border-primary-200 hover:shadow-2xl transition-all duration-500 transform scale-105 animate-fade-in-up" style="animation-delay: 0.1s;">
+                    <!-- @COMPONENT: Badge - Popular -->
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                        <div class="bg-gradient-to-r from-primary-500 to-secondary-500 text-white px-6 py-2 rounded-full text-sm font-semibold">
+                            Most Popular
+                        </div>
+                    </div>
+                    
+                    <div class="text-center">
+                        <h3 class="text-2xl font-bold text-slate-900 mb-2">Professional</h3>
+                        <p class="text-slate-600 mb-6">For growing businesses scaling their marketing</p>
+                        <div class="mb-8">
+                            <span class="text-5xl font-bold bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">$99</span>
+                            <span class="text-slate-600">/month</span>
+                        </div>
+                        <button class="w-full py-4 bg-gradient-to-r from-primary-500 to-primary-600 text-white rounded-2xl font-semibold hover:from-primary-600 hover:to-primary-700 transform hover:scale-105 transition-all duration-300 shadow-lg">
+                            Start Free Trial
+                        </button>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <h4 class="font-semibold text-slate-900 mb-4">Everything in Starter, plus:</h4>
+                        <ul class="space-y-3">
+                            <li class="flex items-center text-slate-600">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                Unlimited AI campaigns
+                            </li>
+                            <li class="flex items-center text-slate-600">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                Advanced analytics & insights
+                            </li>
+                            <li class="flex items-center text-slate-600">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                Priority support
+                            </li>
+                            <li class="flex items-center text-slate-600">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                Up to 10 team members
+                            </li>
+                            <li class="flex items-center text-slate-600">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                Custom integrations
+                            </li>
+                            <li class="flex items-center text-slate-600">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                A/B testing automation
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- @COMPONENT: PricingCard - Enterprise -->
+                <div class="glass rounded-3xl p-8 border border-white/30 hover:shadow-2xl transition-all duration-500 animate-fade-in-up" style="animation-delay: 0.2s;">
+                    <div class="text-center">
+                        <h3 class="text-2xl font-bold text-slate-900 mb-2">Enterprise</h3>
+                        <p class="text-slate-600 mb-6">For large organizations with custom needs</p>
+                        <div class="mb-8">
+                            <span class="text-5xl font-bold text-slate-900">Custom</span>
+                        </div>
+                        <button class="w-full py-4 bg-gradient-to-r from-slate-700 to-slate-800 text-white rounded-2xl font-semibold hover:from-slate-800 hover:to-slate-900 transition-all duration-300">
+                            Contact Sales
+                        </button>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <h4 class="font-semibold text-slate-900 mb-4">Everything in Professional, plus:</h4>
+                        <ul class="space-y-3">
+                            <li class="flex items-center text-slate-600">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                Custom AI model training
+                            </li>
+                            <li class="flex items-center text-slate-600">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                White-label solutions
+                            </li>
+                            <li class="flex items-center text-slate-600">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                Dedicated account manager
+                            </li>
+                            <li class="flex items-center text-slate-600">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                Unlimited team members
+                            </li>
+                            <li class="flex items-center text-slate-600">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                Enterprise security & compliance
+                            </li>
+                            <li class="flex items-center text-slate-600">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                Custom reporting & APIs
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Feature Comparison Table -->
+            <div class="glass rounded-3xl overflow-hidden border border-white/30 animate-fade-in-up" style="animation-delay: 0.3s;">
+                <div class="p-8">
+                    <h3 class="text-2xl font-bold text-slate-900 mb-6 text-center">Feature Comparison</h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full">
+                            <thead>
+                                <tr class="border-b border-slate-200">
+                                    <th class="text-left py-4 pr-4 font-semibold text-slate-900">Features</th>
+                                    <th class="text-center py-4 px-4 font-semibold text-slate-900">Starter</th>
+                                    <th class="text-center py-4 px-4 font-semibold text-primary-600">Professional</th>
+                                    <th class="text-center py-4 pl-4 font-semibold text-slate-900">Enterprise</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b border-slate-100">
+                                    <td class="py-4 pr-4 text-slate-700">AI Campaign Generation</td>
+                                    <td class="text-center py-4 px-4"><i class="fas fa-check text-green-500"></i></td>
+                                    <td class="text-center py-4 px-4"><i class="fas fa-check text-green-500"></i></td>
+                                    <td class="text-center py-4 pl-4"><i class="fas fa-check text-green-500"></i></td>
+                                </tr>
+                                <tr class="border-b border-slate-100">
+                                    <td class="py-4 pr-4 text-slate-700">Advanced Analytics</td>
+                                    <td class="text-center py-4 px-4"><i class="fas fa-times text-slate-300"></i></td>
+                                    <td class="text-center py-4 px-4"><i class="fas fa-check text-green-500"></i></td>
+                                    <td class="text-center py-4 pl-4"><i class="fas fa-check text-green-500"></i></td>
+                                </tr>
+                                <tr class="border-b border-slate-100">
+                                    <td class="py-4 pr-4 text-slate-700">Custom AI Training</td>
+                                    <td class="text-center py-4 px-4"><i class="fas fa-times text-slate-300"></i></td>
+                                    <td class="text-center py-4 px-4"><i class="fas fa-times text-slate-300"></i></td>
+                                    <td class="text-center py-4 pl-4"><i class="fas fa-check text-green-500"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="py-4 pr-4 text-slate-700">White-label Solution</td>
+                                    <td class="text-center py-4 px-4"><i class="fas fa-times text-slate-300"></i></td>
+                                    <td class="text-center py-4 px-4"><i class="fas fa-times text-slate-300"></i></td>
+                                    <td class="text-center py-4 pl-4"><i class="fas fa-check text-green-500"></i></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Pricing Section -->
+
+    <!-- @COMPONENT: Testimonials Section -->
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-24 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-16 animate-fade-in-up">
+                <div class="inline-flex items-center px-4 py-2 rounded-full bg-accent-100 text-accent-700 font-medium mb-6">
+                    <i class="fas fa-heart mr-2"></i>
+                    <span>Customer Love</span>
+                </div>
+                <h2 class="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
+                    Trusted by Marketing Teams
+                    <span class="bg-gradient-to-r from-accent-600 to-primary-600 bg-clip-text text-transparent">
+                        Worldwide
+                    </span>
+                </h2>
+                <p class="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+                    See how ADMYBRAND AI Suite is transforming marketing results for companies of all sizes.
+                </p>
+            </div>
+            
+            <!-- Testimonials Carousel -->
+            <div class="relative">
+                <!-- Testimonials Grid -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" data-testimonial-container>
+                    <!-- @COMPONENT: Testimonial Card 1 -->
+                    <div class="glass rounded-3xl p-8 border border-white/30 hover:shadow-2xl transition-all duration-500 animate-fade-in-up testimonial-card active">
+                        <div class="mb-6">
+                            <div class="flex text-yellow-400 mb-4">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="text-slate-700 leading-relaxed italic">
+                                "ADMYBRAND increased our campaign ROI by 340% in just 3 months. The AI insights are incredibly accurate and the automation saves us 20+ hours per week."
+                            </p>
+                        </div>
+                        <div class="flex items-center">
+                            <!-- Professional headshot of a marketing director -->
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=150&h=150" 
+                                 alt="Professional headshot of Sarah Chen, Marketing Director" 
+                                 class="w-12 h-12 rounded-full object-cover mr-4" />
+                            <div>
+                                <div class="font-semibold text-slate-900" data-mock="true">Sarah Chen</div>
+                                <div class="text-sm text-slate-600" data-mock="true">Marketing Director, TechCorp</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- @COMPONENT: Testimonial Card 2 -->
+                    <div class="glass rounded-3xl p-8 border border-white/30 hover:shadow-2xl transition-all duration-500 animate-fade-in-up testimonial-card" style="animation-delay: 0.1s;">
+                        <div class="mb-6">
+                            <div class="flex text-yellow-400 mb-4">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="text-slate-700 leading-relaxed italic">
+                                "The creative studio feature is a game-changer. We're producing 5x more content with better performance than our previous agency work."
+                            </p>
+                        </div>
+                        <div class="flex items-center">
+                            <!-- Professional headshot of a creative director -->
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=150&h=150" 
+                                 alt="Professional headshot of Michael Rodriguez, Creative Director" 
+                                 class="w-12 h-12 rounded-full object-cover mr-4" />
+                            <div>
+                                <div class="font-semibold text-slate-900" data-mock="true">Michael Rodriguez</div>
+                                <div class="text-sm text-slate-600" data-mock="true">Creative Director, BrandFlow</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- @COMPONENT: Testimonial Card 3 -->
+                    <div class="glass rounded-3xl p-8 border border-white/30 hover:shadow-2xl transition-all duration-500 animate-fade-in-up testimonial-card" style="animation-delay: 0.2s;">
+                        <div class="mb-6">
+                            <div class="flex text-yellow-400 mb-4">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="text-slate-700 leading-relaxed italic">
+                                "As a startup, ADMYBRAND gave us enterprise-level marketing capabilities from day one. We scaled from 0 to $1M ARR in 8 months."
+                            </p>
+                        </div>
+                        <div class="flex items-center">
+                            <!-- Professional headshot of a startup founder -->
+                            <img src="https://pixabay.com/get/g7e562b50ca5531e25bf13cdf5898041c87f4f5a9f47835354cb9f73b9836153bec81208093defaf362c5a2fd6d40f5c4bfbdc94b969d2b17c7dbafc3cfd27c40_1280.jpg" 
+                                 alt="Professional headshot of Emma Thompson, Startup Founder" 
+                                 class="w-12 h-12 rounded-full object-cover mr-4" />
+                            <div>
+                                <div class="font-semibold text-slate-900" data-mock="true">Emma Thompson</div>
+                                <div class="text-sm text-slate-600" data-mock="true">Founder, GrowthLab</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- @COMPONENT: Testimonial Card 4 -->
+                    <div class="glass rounded-3xl p-8 border border-white/30 hover:shadow-2xl transition-all duration-500 animate-fade-in-up testimonial-card" style="animation-delay: 0.3s;">
+                        <div class="mb-6">
+                            <div class="flex text-yellow-400 mb-4">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="text-slate-700 leading-relaxed italic">
+                                "The audience intelligence feature helped us discover new customer segments we never knew existed. Our conversion rates improved by 180%."
+                            </p>
+                        </div>
+                        <div class="flex items-center">
+                            <!-- Professional headshot of a data analyst -->
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=150&h=150" 
+                                 alt="Professional headshot of Lisa Park, Data Analyst" 
+                                 class="w-12 h-12 rounded-full object-cover mr-4" />
+                            <div>
+                                <div class="font-semibold text-slate-900" data-mock="true">Lisa Park</div>
+                                <div class="text-sm text-slate-600" data-mock="true">Data Analyst, RetailPro</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- @COMPONENT: Testimonial Card 5 -->
+                    <div class="glass rounded-3xl p-8 border border-white/30 hover:shadow-2xl transition-all duration-500 animate-fade-in-up testimonial-card" style="animation-delay: 0.4s;">
+                        <div class="mb-6">
+                            <div class="flex text-yellow-400 mb-4">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="text-slate-700 leading-relaxed italic">
+                                "ADMYBRAND's auto-optimization saved our struggling campaigns. What used to require constant manual tweaking now runs perfectly on autopilot."
+                            </p>
+                        </div>
+                        <div class="flex items-center">
+                            <!-- Professional headshot of a performance marketing manager -->
+                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=150&h=150" 
+                                 alt="Professional headshot of David Kim, Performance Marketing Manager" 
+                                 class="w-12 h-12 rounded-full object-cover mr-4" />
+                            <div>
+                                <div class="font-semibold text-slate-900" data-mock="true">David Kim</div>
+                                <div class="text-sm text-slate-600" data-mock="true">Performance Marketing Manager, E-commerce Plus</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- @COMPONENT: Testimonial Card 6 -->
+                    <div class="glass rounded-3xl p-8 border border-white/30 hover:shadow-2xl transition-all duration-500 animate-fade-in-up testimonial-card" style="animation-delay: 0.5s;">
+                        <div class="mb-6">
+                            <div class="flex text-yellow-400 mb-4">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="text-slate-700 leading-relaxed italic">
+                                "The brand protection feature caught a negative sentiment trend early, allowing us to respond quickly and maintain our reputation."
+                            </p>
+                        </div>
+                        <div class="flex items-center">
+                            <!-- Professional headshot of a brand manager -->
+                            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=150&h=150" 
+                                 alt="Professional headshot of Rachel Green, Brand Manager" 
+                                 class="w-12 h-12 rounded-full object-cover mr-4" />
+                            <div>
+                                <div class="font-semibold text-slate-900" data-mock="true">Rachel Green</div>
+                                <div class="text-sm text-slate-600" data-mock="true">Brand Manager, FashionForward</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Carousel Controls -->
+                <div class="flex justify-center mt-12">
+                    <div class="flex space-x-2" data-carousel-indicators>
+                        <button class="w-3 h-3 rounded-full bg-primary-500 transition-all duration-300" data-slide="0"></button>
+                        <button class="w-3 h-3 rounded-full bg-slate-300 hover:bg-slate-400 transition-all duration-300" data-slide="1"></button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Stats Section -->
+            <div class="mt-24 grid md:grid-cols-4 gap-8 animate-fade-in-up" style="animation-delay: 0.6s;">
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-primary-600 mb-2">50,000+</div>
+                    <div class="text-slate-600">Happy Customers</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-secondary-600 mb-2">340%</div>
+                    <div class="text-slate-600">Average ROI Increase</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-accent-600 mb-2">$2.5B</div>
+                    <div class="text-slate-600">Ad Spend Optimized</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-emerald-600 mb-2">99.9%</div>
+                    <div class="text-slate-600">Uptime Guarantee</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Testimonials Section -->
+
+    <!-- @COMPONENT: FAQ Section -->
+    <!-- FAQ Section -->
+    <section class="py-24 bg-gradient-to-br from-slate-50 to-blue-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-16 animate-fade-in-up">
+                <div class="inline-flex items-center px-4 py-2 rounded-full bg-secondary-100 text-secondary-700 font-medium mb-6">
+                    <i class="fas fa-question-circle mr-2"></i>
+                    <span>FAQ</span>
+                </div>
+                <h2 class="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
+                    Frequently Asked
+                    <span class="bg-gradient-to-r from-secondary-600 to-primary-600 bg-clip-text text-transparent">
+                        Questions
+                    </span>
+                </h2>
+                <p class="text-xl text-slate-600 leading-relaxed">
+                    Everything you need to know about ADMYBRAND AI Suite.
+                </p>
+            </div>
+            
+            <!-- FAQ Items -->
+            <div class="space-y-4">
+                <!-- @COMPONENT: FAQ Item 1 -->
+                <div class="glass rounded-2xl border border-white/30 overflow-hidden animate-fade-in-up">
+                    <button class="w-full px-8 py-6 text-left flex items-center justify-between hover:bg-white/20 transition-colors" data-faq-toggle="0">
+                        <span class="text-lg font-semibold text-slate-900">How does ADMYBRAND's AI differ from other marketing tools?</span>
+                        <i class="fas fa-chevron-down text-slate-600 transition-transform duration-300" data-faq-icon="0"></i>
+                    </button>
+                    <div class="px-8 pb-6 hidden" data-faq-content="0">
+                        <p class="text-slate-600 leading-relaxed">
+                            Our AI is trained on millions of high-performing campaigns across all industries and continuously learns from real-time performance data. Unlike generic tools, our AI understands context, brand voice, and audience psychology to create campaigns that truly resonate with your target market. Plus, our proprietary optimization algorithms adjust in real-time for maximum ROI.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- @COMPONENT: FAQ Item 2 -->
+                <div class="glass rounded-2xl border border-white/30 overflow-hidden animate-fade-in-up" style="animation-delay: 0.1s;">
+                    <button class="w-full px-8 py-6 text-left flex items-center justify-between hover:bg-white/20 transition-colors" data-faq-toggle="1">
+                        <span class="text-lg font-semibold text-slate-900">Can I integrate ADMYBRAND with my existing marketing stack?</span>
+                        <i class="fas fa-chevron-down text-slate-600 transition-transform duration-300" data-faq-icon="1"></i>
+                    </button>
+                    <div class="px-8 pb-6 hidden" data-faq-content="1">
+                        <p class="text-slate-600 leading-relaxed">
+                            Absolutely! We offer seamless integrations with 150+ marketing platforms including Google Ads, Facebook Ads, Shopify, HubSpot, Salesforce, and more. Our API allows for custom integrations, and our team can help set up complex workflows. Most integrations take less than 5 minutes to configure.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- @COMPONENT: FAQ Item 3 -->
+                <div class="glass rounded-2xl border border-white/30 overflow-hidden animate-fade-in-up" style="animation-delay: 0.2s;">
+                    <button class="w-full px-8 py-6 text-left flex items-center justify-between hover:bg-white/20 transition-colors" data-faq-toggle="2">
+                        <span class="text-lg font-semibold text-slate-900">What kind of results can I expect and how quickly?</span>
+                        <i class="fas fa-chevron-down text-slate-600 transition-transform duration-300" data-faq-icon="2"></i>
+                    </button>
+                    <div class="px-8 pb-6 hidden" data-faq-content="2">
+                        <p class="text-slate-600 leading-relaxed">
+                            Most customers see initial improvements within 7-14 days, with significant ROI increases typically achieved within 30-60 days. Our average customer experiences a 340% ROI increase, 50% reduction in cost-per-acquisition, and 80% time savings on campaign management. Results vary by industry and starting point, but we guarantee improvement or your money back.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- @COMPONENT: FAQ Item 4 -->
+                <div class="glass rounded-2xl border border-white/30 overflow-hidden animate-fade-in-up" style="animation-delay: 0.3s;">
+                    <button class="w-full px-8 py-6 text-left flex items-center justify-between hover:bg-white/20 transition-colors" data-faq-toggle="3">
+                        <span class="text-lg font-semibold text-slate-900">Is my data secure and how do you protect privacy?</span>
+                        <i class="fas fa-chevron-down text-slate-600 transition-transform duration-300" data-faq-icon="3"></i>
+                    </button>
+                    <div class="px-8 pb-6 hidden" data-faq-content="3">
+                        <p class="text-slate-600 leading-relaxed">
+                            Security is our top priority. We're SOC 2 Type II certified, GDPR compliant, and use enterprise-grade encryption. Your data is never shared with third parties or used to train models for competitors. We offer on-premise deployment for enterprise customers and maintain 99.9% uptime with multiple security audits per year.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- @COMPONENT: FAQ Item 5 -->
+                <div class="glass rounded-2xl border border-white/30 overflow-hidden animate-fade-in-up" style="animation-delay: 0.4s;">
+                    <button class="w-full px-8 py-6 text-left flex items-center justify-between hover:bg-white/20 transition-colors" data-faq-toggle="4">
+                        <span class="text-lg font-semibold text-slate-900">Do you offer training and support for my team?</span>
+                        <i class="fas fa-chevron-down text-slate-600 transition-transform duration-300" data-faq-icon="4"></i>
+                    </button>
+                    <div class="px-8 pb-6 hidden" data-faq-content="4">
+                        <p class="text-slate-600 leading-relaxed">
+                            Yes! We provide comprehensive onboarding, live training sessions, video tutorials, and 24/7 support. Professional and Enterprise customers get dedicated customer success managers. We also offer certification programs and regular workshops to help your team maximize the platform's potential.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- @COMPONENT: FAQ Item 6 -->
+                <div class="glass rounded-2xl border border-white/30 overflow-hidden animate-fade-in-up" style="animation-delay: 0.5s;">
+                    <button class="w-full px-8 py-6 text-left flex items-center justify-between hover:bg-white/20 transition-colors" data-faq-toggle="5">
+                        <span class="text-lg font-semibold text-slate-900">Can I cancel anytime and what's your refund policy?</span>
+                        <i class="fas fa-chevron-down text-slate-600 transition-transform duration-300" data-faq-icon="5"></i>
+                    </button>
+                    <div class="px-8 pb-6 hidden" data-faq-content="5">
+                        <p class="text-slate-600 leading-relaxed">
+                            Absolutely. No long-term contracts required - cancel anytime with 30 days notice. We offer a 14-day free trial and 60-day money-back guarantee. If you're not satisfied with the results, we'll provide a full refund. Our goal is your success, not trapping you in contracts.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: FAQ Section -->
+
+    <!-- @COMPONENT: Blog/Resources Section -->
+    <!-- Blog/Resources Section -->
+    <section id="resources" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-16 animate-fade-in-up">
+                <div class="inline-flex items-center px-4 py-2 rounded-full bg-emerald-100 text-emerald-700 font-medium mb-6">
+                    <i class="fas fa-book-open mr-2"></i>
+                    <span>Resources</span>
+                </div>
+                <h2 class="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
+                    Marketing Insights &
+                    <span class="bg-gradient-to-r from-emerald-600 to-primary-600 bg-clip-text text-transparent">
+                        Best Practices
+                    </span>
+                </h2>
+                <p class="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+                    Stay ahead of the curve with our latest research, case studies, and actionable marketing strategies.
+                </p>
+            </div>
+            
+            <!-- Featured Article -->
+            <div class="mb-16 animate-fade-in-up">
+                <!-- @COMPONENT: Card - Featured Article -->
+                <div class="glass rounded-3xl overflow-hidden border border-white/30 hover:shadow-2xl transition-all duration-500">
+                    <div class="lg:flex">
+                        <div class="lg:w-1/2">
+                            <!-- AI and marketing strategy visualization with graphs and data -->
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+                                 alt="AI and marketing strategy visualization with graphs and data analytics" 
+                                 class="w-full h-80 lg:h-full object-cover" />
+                        </div>
+                        <div class="lg:w-1/2 p-8 lg:p-12">
+                            <!-- @COMPONENT: Badge -->
+                            <div class="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-sm font-medium mb-4">
+                                <i class="fas fa-fire mr-2"></i>
+                                <span>Featured</span>
+                            </div>
+                            <h3 class="text-3xl font-bold text-slate-900 mb-4" data-mock="true">
+                                The Complete Guide to AI-Powered Marketing in 2025
+                            </h3>
+                            <p class="text-lg text-slate-600 mb-6 leading-relaxed" data-mock="true">
+                                Discover how leading brands are using artificial intelligence to revolutionize their marketing strategies, increase conversion rates, and achieve unprecedented ROI growth.
+                            </p>
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center">
+                                    <!-- Professional headshot of a marketing expert -->
+                                    <img src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=150&h=150" 
+                                         alt="Professional headshot of Alex Johnson, Marketing Expert" 
+                                         class="w-12 h-12 rounded-full object-cover mr-4" />
+                                    <div>
+                                        <div class="font-semibold text-slate-900" data-mock="true">Alex Johnson</div>
+                                        <div class="text-sm text-slate-600" data-mock="true">Head of Marketing Research</div>
+                                    </div>
+                                </div>
+                                <button class="px-6 py-3 bg-gradient-to-r from-primary-500 to-primary-600 text-white rounded-xl font-medium hover:from-primary-600 hover:to-primary-700 transition-all">
+                                    Read Article
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Resource Categories -->
+            <div class="grid lg:grid-cols-4 gap-8 mb-16">
+                <!-- @COMPONENT: Card - Resource Category -->
+                <div class="glass rounded-2xl p-6 text-center border border-white/30 hover:shadow-xl transition-all duration-300 group animate-fade-in-up">
+                    <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-lightbulb text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Case Studies</h3>
+                    <p class="text-slate-600 text-sm mb-4">Real success stories from our customers</p>
+                    <div class="text-primary-600 font-medium text-sm">12 Articles</div>
+                </div>
+                
+                <div class="glass rounded-2xl p-6 text-center border border-white/30 hover:shadow-xl transition-all duration-300 group animate-fade-in-up" style="animation-delay: 0.1s;">
+                    <div class="w-16 h-16 bg-gradient-to-r from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-chart-bar text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Industry Reports</h3>
+                    <p class="text-slate-600 text-sm mb-4">Data-driven insights and trends</p>
+                    <div class="text-purple-600 font-medium text-sm">8 Reports</div>
+                </div>
+                
+                <div class="glass rounded-2xl p-6 text-center border border-white/30 hover:shadow-xl transition-all duration-300 group animate-fade-in-up" style="animation-delay: 0.2s;">
+                    <div class="w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-graduation-cap text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Tutorials</h3>
+                    <p class="text-slate-600 text-sm mb-4">Step-by-step guides and tips</p>
+                    <div class="text-green-600 font-medium text-sm">24 Guides</div>
+                </div>
+                
+                <div class="glass rounded-2xl p-6 text-center border border-white/30 hover:shadow-xl transition-all duration-300 group animate-fade-in-up" style="animation-delay: 0.3s;">
+                    <div class="w-16 h-16 bg-gradient-to-r from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-video text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Webinars</h3>
+                    <p class="text-slate-600 text-sm mb-4">Live and recorded sessions</p>
+                    <div class="text-orange-600 font-medium text-sm">16 Videos</div>
+                </div>
+            </div>
+            
+            <!-- Latest Articles Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- @COMPONENT: Card - Article 1 -->
+                <div class="glass rounded-2xl overflow-hidden border border-white/30 hover:shadow-xl transition-all duration-300 group animate-fade-in-up" style="animation-delay: 0.4s;">
+                    <!-- Digital marketing strategy workspace with laptop and analytics -->
+                    <img src="https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=300" 
+                         alt="Digital marketing strategy workspace with laptop and analytics" 
+                         class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <div class="p-6">
+                        <div class="text-primary-600 text-sm font-medium mb-2" data-mock="true">Strategy</div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-primary-600 transition-colors" data-mock="true">
+                            5 AI Marketing Trends That Will Define 2025
+                        </h3>
+                        <p class="text-slate-600 text-sm mb-4" data-mock="true">
+                            Explore the emerging AI technologies that forward-thinking marketers are already implementing...
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs text-slate-500" data-mock="true">Dec 15, 2024</span>
+                            <span class="text-xs text-slate-500" data-mock="true">5 min read</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- @COMPONENT: Card - Article 2 -->
+                <div class="glass rounded-2xl overflow-hidden border border-white/30 hover:shadow-xl transition-all duration-300 group animate-fade-in-up" style="animation-delay: 0.5s;">
+                    <!-- Social media marketing and engagement metrics dashboard -->
+                    <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=300" 
+                         alt="Social media marketing and engagement metrics dashboard" 
+                         class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <div class="p-6">
+                        <div class="text-secondary-600 text-sm font-medium mb-2" data-mock="true">Case Study</div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-secondary-600 transition-colors" data-mock="true">
+                            How StartupX Achieved 400% ROI Growth
+                        </h3>
+                        <p class="text-slate-600 text-sm mb-4" data-mock="true">
+                            A deep dive into the strategies and tactics that transformed this startup's marketing performance...
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs text-slate-500" data-mock="true">Dec 12, 2024</span>
+                            <span class="text-xs text-slate-500" data-mock="true">8 min read</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- @COMPONENT: Card - Article 3 -->
+                <div class="glass rounded-2xl overflow-hidden border border-white/30 hover:shadow-xl transition-all duration-300 group animate-fade-in-up" style="animation-delay: 0.6s;">
+                    <!-- Email marketing automation and customer journey visualization -->
+                    <img src="https://images.unsplash.com/photo-1596526131083-e8c633c948d2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=300" 
+                         alt="Email marketing automation and customer journey visualization" 
+                         class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <div class="p-6">
+                        <div class="text-accent-600 text-sm font-medium mb-2" data-mock="true">Tutorial</div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-accent-600 transition-colors" data-mock="true">
+                            Mastering AI-Powered Email Campaigns
+                        </h3>
+                        <p class="text-slate-600 text-sm mb-4" data-mock="true">
+                            Learn how to create personalized email campaigns that convert using advanced AI segmentation...
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs text-slate-500" data-mock="true">Dec 10, 2024</span>
+                            <span class="text-xs text-slate-500" data-mock="true">12 min read</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Newsletter Signup -->
+            <div class="mt-16 glass rounded-3xl p-8 lg:p-12 text-center border border-white/30 animate-fade-in-up" style="animation-delay: 0.7s;">
+                <h3 class="text-3xl font-bold text-slate-900 mb-4">Stay Updated with Marketing Intelligence</h3>
+                <p class="text-lg text-slate-600 mb-8 max-w-2xl mx-auto">
+                    Get weekly insights, case studies, and actionable strategies delivered to your inbox.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+                    <!-- @COMPONENT: Input -->
+                    <input type="email" placeholder="Enter your email" class="flex-1 px-6 py-4 rounded-xl border border-slate-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-100 transition-all">
+                    <!-- @COMPONENT: Button -->
+                    <button class="px-8 py-4 bg-gradient-to-r from-primary-500 to-primary-600 text-white rounded-xl font-semibold hover:from-primary-600 hover:to-primary-700 transition-all whitespace-nowrap">
+                        Subscribe
+                    </button>
+                </div>
+                <p class="text-xs text-slate-500 mt-4">No spam, unsubscribe anytime.</p>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Blog/Resources Section -->
+
+    <!-- @COMPONENT: Contact Section -->
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-gradient-to-br from-slate-900 via-primary-900 to-secondary-900 text-white relative overflow-hidden">
+        <!-- Background Elements -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute top-1/4 right-1/4 w-96 h-96 bg-gradient-to-r from-primary-500/20 to-secondary-500/20 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-1/4 left-1/4 w-80 h-80 bg-gradient-to-r from-accent-500/20 to-primary-500/20 rounded-full blur-3xl"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <!-- Section Header -->
+            <div class="text-center mb-16 animate-fade-in-up">
+                <div class="inline-flex items-center px-4 py-2 rounded-full bg-white/10 border border-white/20 text-white font-medium mb-6">
+                    <i class="fas fa-envelope mr-2"></i>
+                    <span>Get in Touch</span>
+                </div>
+                <h2 class="text-4xl lg:text-5xl font-bold mb-6">
+                    Ready to Transform Your
+                    <span class="bg-gradient-to-r from-accent-400 to-primary-400 bg-clip-text text-transparent">
+                        Marketing Results?
+                    </span>
+                </h2>
+                <p class="text-xl text-white/80 max-w-3xl mx-auto leading-relaxed">
+                    Get started with a free consultation and discover how ADMYBRAND AI Suite can accelerate your growth.
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-16 items-start">
+                <!-- Contact Form -->
+                <div class="animate-fade-in-up">
+                    <!-- @COMPONENT: Card - Contact Form -->
+                    <div class="glass-dark rounded-3xl p-8 border border-white/20">
+                        <h3 class="text-2xl font-bold mb-6">Start Your Free Trial</h3>
+                        <form class="space-y-6" data-contact-form>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <!-- @COMPONENT: Input - First Name -->
+                                <div>
+                                    <label class="block text-sm font-medium text-white/80 mb-2">First Name *</label>
+                                    <input type="text" required data-field="firstName" class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/20 text-white placeholder-white/50 focus:border-primary-400 focus:ring-2 focus:ring-primary-400/50 transition-all" placeholder="John">
+                                </div>
+                                <!-- @COMPONENT: Input - Last Name -->
+                                <div>
+                                    <label class="block text-sm font-medium text-white/80 mb-2">Last Name *</label>
+                                    <input type="text" required data-field="lastName" class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/20 text-white placeholder-white/50 focus:border-primary-400 focus:ring-2 focus:ring-primary-400/50 transition-all" placeholder="Doe">
+                                </div>
+                            </div>
+                            
+                            <!-- @COMPONENT: Input - Email -->
+                            <div>
+                                <label class="block text-sm font-medium text-white/80 mb-2">Email Address *</label>
+                                <input type="email" required data-field="email" class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/20 text-white placeholder-white/50 focus:border-primary-400 focus:ring-2 focus:ring-primary-400/50 transition-all" placeholder="john@company.com">
+                            </div>
+                            
+                            <!-- @COMPONENT: Input - Company -->
+                            <div>
+                                <label class="block text-sm font-medium text-white/80 mb-2">Company Name</label>
+                                <input type="text" data-field="company" class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/20 text-white placeholder-white/50 focus:border-primary-400 focus:ring-2 focus:ring-primary-400/50 transition-all" placeholder="Your Company">
+                            </div>
+                            
+                            <!-- @COMPONENT: Select - Company Size -->
+                            <div>
+                                <label class="block text-sm font-medium text-white/80 mb-2">Company Size</label>
+                                <select data-field="companySize" class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/20 text-white focus:border-primary-400 focus:ring-2 focus:ring-primary-400/50 transition-all">
+                                    <option value="">Select size</option>
+                                    <option value="1-10">1-10 employees</option>
+                                    <option value="11-50">11-50 employees</option>
+                                    <option value="51-200">51-200 employees</option>
+                                    <option value="201-1000">201-1,000 employees</option>
+                                    <option value="1000+">1,000+ employees</option>
+                                </select>
+                            </div>
+                            
+                            <!-- @COMPONENT: Textarea - Message -->
+                            <div>
+                                <label class="block text-sm font-medium text-white/80 mb-2">Tell us about your marketing goals</label>
+                                <textarea rows="4" data-field="message" class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/20 text-white placeholder-white/50 focus:border-primary-400 focus:ring-2 focus:ring-primary-400/50 transition-all resize-none" placeholder="What are your biggest marketing challenges? What results are you hoping to achieve?"></textarea>
+                            </div>
+                            
+                            <!-- @COMPONENT: Button - Submit -->
+                            <button type="submit" class="w-full py-4 bg-gradient-to-r from-primary-500 to-primary-600 text-white rounded-xl font-semibold text-lg hover:from-primary-600 hover:to-primary-700 transform hover:scale-105 transition-all duration-300 shadow-xl">
+                                <i class="fas fa-rocket mr-2"></i>
+                                Start Free Trial
+                            </button>
+                            
+                            <p class="text-xs text-white/60 text-center">
+                                By submitting this form, you agree to our Terms of Service and Privacy Policy.
+                            </p>
+                        </form>
+                    </div>
+                </div>
+                
+                <!-- Contact Information -->
+                <div class="animate-slide-in-left" style="animation-delay: 0.3s;">
+                    <div class="space-y-8">
+                        <!-- Contact Methods -->
+                        <div>
+                            <h3 class="text-2xl font-bold mb-6">Get in Touch</h3>
+                            <div class="space-y-6">
+                                <div class="flex items-center">
+                                    <div class="w-12 h-12 bg-gradient-to-r from-primary-500 to-primary-600 rounded-xl flex items-center justify-center mr-4">
+                                        <i class="fas fa-phone text-white"></i>
+                                    </div>
+                                    <div>
+                                        <div class="font-semibold">Call us</div>
+                                        <div class="text-white/80">+1 (555) 123-4567</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-center">
+                                    <div class="w-12 h-12 bg-gradient-to-r from-secondary-500 to-secondary-600 rounded-xl flex items-center justify-center mr-4">
+                                        <i class="fas fa-envelope text-white"></i>
+                                    </div>
+                                    <div>
+                                        <div class="font-semibold">Email us</div>
+                                        <div class="text-white/80">hello@ADMYBRAND.com</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-center">
+                                    <div class="w-12 h-12 bg-gradient-to-r from-accent-500 to-accent-600 rounded-xl flex items-center justify-center mr-4">
+                                        <i class="fas fa-map-marker-alt text-white"></i>
+                                    </div>
+                                    <div>
+                                        <div class="font-semibold">Visit us</div>
+                                        <div class="text-white/80">123 Innovation Drive<br>San Francisco, CA 94105</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Office Hours -->
+                        <div class="glass-dark rounded-2xl p-6 border border-white/20">
+                            <h4 class="text-lg font-semibold mb-4">Office Hours</h4>
+                            <div class="space-y-2 text-white/80">
+                                <div class="flex justify-between">
+                                    <span>Monday - Friday</span>
+                                    <span>9:00 AM - 6:00 PM PST</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span>Saturday</span>
+                                    <span>10:00 AM - 4:00 PM PST</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span>Sunday</span>
+                                    <span>Closed</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Response Time -->
+                        <div class="glass-dark rounded-2xl p-6 border border-white/20">
+                            <h4 class="text-lg font-semibold mb-4">Response Time</h4>
+                            <div class="space-y-3">
+                                <div class="flex items-center">
+                                    <div class="w-3 h-3 bg-green-400 rounded-full mr-3"></div>
+                                    <span class="text-white/80">Email: Within 2 hours</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="w-3 h-3 bg-blue-400 rounded-full mr-3"></div>
+                                    <span class="text-white/80">Phone: Immediate</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="w-3 h-3 bg-purple-400 rounded-full mr-3"></div>
+                                    <span class="text-white/80">Demo Request: Same day</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Contact Section -->
+
+    <!-- @COMPONENT: Footer -->
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-5 gap-8 mb-12">
+                <!-- Company Info -->
+                <div class="lg:col-span-2">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-12 h-12 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-xl flex items-center justify-center">
+                            <i class="fas fa-brain text-white text-xl"></i>
+                        </div>
+                        <span class="text-2xl font-bold bg-gradient-to-r from-primary-400 to-secondary-400 bg-clip-text text-transparent">ADMYBRAND</span>
+                    </div>
+                    <p class="text-white/70 mb-6 leading-relaxed">
+                        Revolutionizing marketing with AI-powered tools that help businesses generate better campaigns, analyze performance, and scale exponentially.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-primary-500 transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-primary-500 transition-colors">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-primary-500 transition-colors">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-primary-500 transition-colors">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Product Links -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">Product</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#features" class="text-white/70 hover:text-white transition-colors">Features</a></li>
+                        <li><a href="#pricing" class="text-white/70 hover:text-white transition-colors">Pricing</a></li>
+                        <li><a href="#" class="text-white/70 hover:text-white transition-colors">Integrations</a></li>
+                        <li><a href="#" class="text-white/70 hover:text-white transition-colors">API</a></li>
+                        <li><a href="#" class="text-white/70 hover:text-white transition-colors">Security</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Company Links -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">Company</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-white/70 hover:text-white transition-colors">About</a></li>
+                        <li><a href="#" class="text-white/70 hover:text-white transition-colors">Careers</a></li>
+                        <li><a href="#" class="text-white/70 hover:text-white transition-colors">Press</a></li>
+                        <li><a href="#" class="text-white/70 hover:text-white transition-colors">Partners</a></li>
+                        <li><a href="#contact" class="text-white/70 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Support Links -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">Support</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-white/70 hover:text-white transition-colors">Help Center</a></li>
+                        <li><a href="#" class="text-white/70 hover:text-white transition-colors">Documentation</a></li>
+                        <li><a href="#" class="text-white/70 hover:text-white transition-colors">Status</a></li>
+                        <li><a href="#" class="text-white/70 hover:text-white transition-colors">Community</a></li>
+                        <li><a href="#resources" class="text-white/70 hover:text-white transition-colors">Resources</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Bottom Bar -->
+            <div class="border-t border-white/10 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="text-white/60 text-sm mb-4 md:mb-0">
+                        © 2024 ADMYBRAND AI Suite. All rights reserved.
+                    </div>
+                    <div class="flex space-x-6 text-sm">
+                        <a href="#" class="text-white/60 hover:text-white transition-colors">Privacy Policy</a>
+                        <a href="#" class="text-white/60 hover:text-white transition-colors">Terms of Service</a>
+                        <a href="#" class="text-white/60 hover:text-white transition-colors">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- @END_COMPONENT: Footer -->
+
+    <!-- @COMPONENT: JavaScript -->
+    <script>
+        // TODO: Implement business logic, API calls, and state management
+        
+        (function() {
+            // Mobile Menu Toggle
+            const mobileMenuToggle = document.querySelector('[data-mobile-menu-toggle]');
+            const mobileMenu = document.querySelector('[data-mobile-menu]');
+            
+            if (mobileMenuToggle && mobileMenu) {
+                mobileMenuToggle.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+            
+            // FAQ Toggle
+            const faqButtons = document.querySelectorAll('[data-faq-toggle]');
+            faqButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const index = button.getAttribute('data-faq-toggle');
+                    const content = document.querySelector(`[data-faq-content="${index}"]`);
+                    const icon = document.querySelector(`[data-faq-icon="${index}"]`);
+                    
+                    if (content && icon) {
+                        const isHidden = content.classList.contains('hidden');
+                        
+                        // Close all other FAQs
+                        document.querySelectorAll('[data-faq-content]').forEach(item => {
+                            item.classList.add('hidden');
+                        });
+                        document.querySelectorAll('[data-faq-icon]').forEach(item => {
+                            item.classList.remove('rotate-180');
+                        });
+                        
+                        // Toggle current FAQ
+                        if (isHidden) {
+                            content.classList.remove('hidden');
+                            icon.classList.add('rotate-180');
+                        }
+                    }
+                });
+            });
+            
+            // Pricing Calculator
+            const calculatorInputs = document.querySelectorAll('[data-calculator]');
+            const resultElement = document.querySelector('[data-result="monthlyGain"]');
+            
+            function updateCalculator() {
+                const adSpend = parseFloat(document.querySelector('[data-calculator="adSpend"]')?.value) || 0;
+                const currentROI = parseFloat(document.querySelector('[data-calculator="currentROI"]')?.value) || 0;
+                const improvement = parseFloat(document.querySelector('[data-calculator="improvement"]')?.value) || 0;
+                
+                const currentRevenue = adSpend * (currentROI / 100);
+                const newROI = currentROI * (1 + improvement / 100);
+                const newRevenue = adSpend * (newROI / 100);
+                const monthlyGain = newRevenue - currentRevenue;
+                
+                if (resultElement) {
+                    resultElement.textContent = `$${monthlyGain.toLocaleString()}`;
+                }
+            }
+            
+            calculatorInputs.forEach(input => {
+                input.addEventListener('input', updateCalculator);
+                input.addEventListener('change', updateCalculator);
+            });
+            
+            // Initialize calculator
+            updateCalculator();
+            
+            // Testimonials Carousel (Simple version)
+            let currentSlide = 0;
+            const testimonialCards = document.querySelectorAll('.testimonial-card');
+            const indicators = document.querySelectorAll('[data-slide]');
+            
+            function showSlide(index) {
+                testimonialCards.forEach((card, i) => {
+                    if (i < 3) { // Show first 3 cards
+                        card.classList.toggle('active', Math.floor(i / 3) === index);
+                    } else { // Show next 3 cards
+                        card.classList.toggle('active', Math.floor((i - 3) / 3) === index);
+                    }
+                });
+                
+                indicators.forEach((indicator, i) => {
+                    indicator.classList.toggle('bg-primary-500', i === index);
+                    indicator.classList.toggle('bg-slate-300', i !== index);
+                });
+            }
+            
+            indicators.forEach((indicator, index) => {
+                indicator.addEventListener('click', () => {
+                    currentSlide = index;
+                    showSlide(currentSlide);
+                });
+            });
+            
+            // Auto-advance carousel
+            setInterval(() => {
+                currentSlide = (currentSlide + 1) % indicators.length;
+                showSlide(currentSlide);
+            }, 5000);
+            
+            // Contact Form Validation
+            const contactForm = document.querySelector('[data-contact-form]');
+            
+            if (contactForm) {
+                contactForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    
+                    // Get form data
+                    const formData = new FormData(contactForm);
+                    const data = {};
+                    
+                    document.querySelectorAll('[data-field]').forEach(field => {
+                        const fieldName = field.getAttribute('data-field');
+                        data[fieldName] = field.value;
+                    });
+                    
+                    // Basic validation
+                    if (!data.firstName || !data.lastName || !data.email) {
+                        alert('Please fill in all required fields.');
+                        return;
+                    }
+                    
+                    // Email validation
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(data.email)) {
+                        alert('Please enter a valid email address.');
+                        return;
+                    }
+                    
+                    // TODO: Send form data to server
+                    console.log('Form submitted:', data);
+                    alert('Thank you! We\'ll be in touch within 24 hours.');
+                    
+                    // Reset form
+                    contactForm.reset();
+                });
+            }
+            
+            // Smooth scroll for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+            
+            // Scroll animations trigger (simplified version)
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+            
+            // Observe animated elements
+            document.querySelectorAll('.animate-fade-in-up, .animate-slide-in-left').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                observer.observe(el);
+            });
+            
+        })();
+    </script>
+</body>
+</html>
