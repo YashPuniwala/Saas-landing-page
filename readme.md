@@ -1,54 +1,102 @@
-# Overview
+# ADMYBRAND AI Saas-Landing-Page 🚀
 
-This is a modern SaaS landing page for "ADMYBRAND AI Suite", an AI-powered marketing tool. The application is built as a full-stack React/TypeScript project with a focus on creating stunning UI components and animations for marketing purposes. The codebase emphasizes modern design trends including glassmorphism effects, smooth animations, and mobile-first responsive design.
+![ADMYBRAND AI Saas-Landing-Page Thumbnail](./public/thumbnail.png)
 
-# User Preferences
+A sleek, animated SaaS landing page for **ADMYBRAND AI Saas-Landing-Page** — an AI-powered marketing tool. Built using **Next.js**, **TypeScript**, **Tailwind CSS**, and **Framer Motion**, this project focuses on design-first development with smooth animations, responsive layouts, and reusable component architecture.
 
-Preferred communication style: Simple, everyday language.
+---
 
-# System Architecture
+## 📸 Screenshots
 
-## Frontend Architecture
-- **Framework**: React 18 with TypeScript, using Vite for build tooling and development server
-- **Routing**: Wouter for lightweight client-side routing
-- **Styling**: Tailwind CSS with custom CSS variables for theming and glassmorphism effects
-- **UI Components**: shadcn/ui component library with Radix UI primitives
-- **Animations**: Framer Motion for complex animations and transitions
-- **State Management**: TanStack Query (React Query) for server state management
-- **Form Handling**: React Hook Form with Zod validation
+### 🌟 Hero Section & Navigation  
+![Feature Section](./public/features.png)
 
-## Component System
-The application implements a reusable component library with 7+ components:
-- **GlassCard**: Glassmorphism-styled containers with light/dark variants
-- **GradientButton**: Multi-variant gradient buttons with animation support
-- **AnimatedBadge**: Floating badges with icon support and animations
-- **FeatureCard**: Feature showcase cards with hover effects
-- **PricingCard**: Pricing tier cards with popular highlighting
-- **TestimonialCard**: Customer review cards with ratings
-- **AnimatedCounter**: Number counting animations for statistics
+### ✨ Feature & Pricing Cards  
+![PricingSection](./public/pricing.png) 
+(./public/pricing2.png)
 
-## Backend Architecture
-- **Server**: Express.js with TypeScript running on Node.js
-- **Database Integration**: Drizzle ORM configured for PostgreSQL with migration support
-- **Storage Layer**: Abstracted storage interface with in-memory implementation for development
-- **API Structure**: RESTful API design with `/api` prefix routing
-- **Development**: Hot reload with Vite middleware integration
+### 📱 Mobile Responsive Layout  
+![Mobile Responsive](./public/mobile-responsive.png)
 
-## Design System
-- **Theme**: Custom CSS variables supporting light/dark modes with brand colors
-- **Typography**: Hierarchical text styling with responsive font sizing
-- **Animation Library**: Predefined animation objects for consistent motion design
-- **Responsive Design**: Mobile-first approach with breakpoint-based layouts
-- **Glass Effects**: Custom glassmorphism styling with backdrop blur and transparency
+---
 
-## External Dependencies
+## 🧠 Key Features
 
-- **Database**: PostgreSQL via Neon Database serverless driver
-- **UI Framework**: Radix UI primitives for accessible components
-- **Animation**: Framer Motion for advanced animations and gestures
-- **Form Validation**: Zod schema validation with React Hook Form integration
-- **Styling**: Tailwind CSS with PostCSS for processing
-- **Icons**: Lucide React icon library
-- **Development**: Replit-specific plugins for runtime error handling and cartographer integration
-- **Image Optimization**: Unsplash integration for placeholder images in testimonials
-- **Date Handling**: date-fns library for date formatting and manipulation
+- ⚛️ **Next.js 14 (App Router)**: File-based routing, SSR/ISR/SSG ready  
+- 🟦 **TypeScript**: Full type-safety across the project  
+- 💨 **Tailwind CSS**: Utility-first, responsive styling with custom themes  
+- 🎬 **Framer Motion**: Page transitions, animations, and scroll effects  
+- 🧩 **shadcn/ui + Radix UI**: Accessible, headless components  
+- 🌗 **Dark Mode Support**: Switch themes using CSS variables  
+- 🌐 **Client-side Routing**: Built-in via Next.js  
+- ⚡ **Optimized Performance**: Lazy loading, dynamic imports, static optimization  
+- 📱 **Mobile-First Design**: Fully responsive components  
+- 🎯 **Reusable Component Library**: Custom and shadcn-based components  
+- 🧪 **Form Validation**: React Hook Form + Zod schema integration  
+
+---
+
+## 📁 Tech Stack
+
+| Tech               | Role                             |
+|--------------------|----------------------------------|
+| **Next.js 14+**     | Framework (App Router)           |
+| **React 18**        | UI Library                       |
+| **TypeScript**      | Static typing                    |
+| **Tailwind CSS**    | Styling                          |
+| **Framer Motion**   | Animation                        |
+| **Radix UI**        | Accessibility primitives         |
+| **Lucide Icons**    | Icon set                         |
+| **React Hook Form** | Form handling                    |
+| **Zod**             | Form validation                  |
+| **date-fns**        | Date utility                     |
+
+---
+
+## 🧩 Reusable Components
+
+| Component          | Description |
+|--------------------|-------------|
+| `GlassCard`        | Transparent, glassmorphism-styled container |
+| `GradientButton`   | Colorful buttons with hover effects |
+| `FeatureCard`      | Descriptive product features |
+| `PricingCard`      | Pricing tiers with badges |
+| `TestimonialCard`  | Client feedback + star ratings |
+| `AnimatedCounter`  | Count-up animation for stats |
+| `AnimatedBadge`    | Icons with float/motion effects |
+| `FAQAccordion`     | Interactive Q&A section |
+| `StickyNavbar`     | Appears on scroll with fade-in |
+| `HeroSection`      | Fullscreen CTA + animation |
+| `Footer`           | Responsive footer with dynamic typing text |
+
+---
+
+## 🔧 Installation & Setup
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/YashPuniwala/Saas-landing-page.git
+cd admybrand-ai-suite
+```
+
+### 2. Install dependencies
+```bash
+npm install
+```
+
+### 3. Run the development server
+```bash
+npm run dev
+```
+
+Visit **http://localhost:3000** to view the project in your browser.
+
+---
+
+## 🌍 GitHub Repository
+
+🔗 [View on GitHub](https://github.com/YashPuniwala/Saas-landing-page)
+
+## Live Demo
+
+https://saas-landing-page-delta-vert.vercel.app/

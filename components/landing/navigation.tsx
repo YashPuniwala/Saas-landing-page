@@ -9,6 +9,37 @@ import { ThemeToggle } from "../ui/theme-toggle";
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [showNav, setShowNav] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      
+      // Always show nav at the very top
+      if (currentScrollY < 10) {
+        setShowNav(true);
+        setIsScrolled(false);
+        setLastScrollY(currentScrollY);
+        return;
+      }
+
+      // Scrolling down
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        setShowNav(false);
+      } 
+      // Scrolling up
+      else if (currentScrollY < lastScrollY) {
+        setShowNav(true);
+      }
+
+      setIsScrolled(currentScrollY > 10);
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [lastScrollY]);
 
   useEffect(() => {
     const handleResize = () => {
@@ -17,17 +48,8 @@ export function Navigation() {
       }
     };
 
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
-
     window.addEventListener('resize', handleResize);
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-      window.removeEventListener('scroll', handleScroll);
-    };
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   const navItems = [
@@ -54,7 +76,10 @@ export function Navigation() {
           : 'bg-white/90 dark:bg-slate-950/90 backdrop-blur-sm'
       } transition-all duration-300`}
       initial={{ y: -100 }}
-      animate={{ y: 0 }}
+      animate={{ 
+        y: showNav ? 0 : -100,
+        transition: { type: 'spring', damping: 20, stiffness: 300 }
+      }}
       transition={{ duration: 0.5 }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
