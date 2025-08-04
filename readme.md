@@ -76,7 +76,7 @@ A sleek, animated SaaS landing page for **ADMYBRAND AI Saas-Landing-Page** — a
 ### 1. Clone the repository
 ```bash
 git clone https://github.com/YashPuniwala/Saas-landing-page.git
-cd admybrand-ai-suite
+cd Saas-Landing-Page
 ```
 
 ### 2. Install dependencies
