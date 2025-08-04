@@ -43,31 +43,31 @@ export function ContactSection() {
     },
   });
 
- const onSubmit = async (data: ContactFormData) => {
-  setIsSubmitting(true);
-  
-  try {
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1000));
+  const onSubmit = async (data: ContactFormData) => {
+    setIsSubmitting(true);
     
-    console.log("Form submitted:", data);
-    
-    toast({
-      title: "Thank you for your interest!",
-      description: "We'll be in touch within 24 hours to discuss your marketing goals.",
-    });
-    
-    form.reset();
-  } catch (error) {
-    toast({
-      title: "Something went wrong",
-      description: "Please try again or contact us directly.",
-      variant: "destructive",
-    });
-  } finally {
-    setIsSubmitting(false);
-  }
-};
+    try {
+      // Simulate API call
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      
+      console.log("Form submitted:", data);
+      
+      toast({
+        title: "Thank you for your interest!",
+        description: "We'll be in touch within 24 hours to discuss your marketing goals.",
+      });
+      
+      form.reset();
+    } catch (error) {
+      toast({
+        title: "Something went wrong",
+        description: "Please try again or contact us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   const contactMethods = [
     {
@@ -257,12 +257,12 @@ export function ContactSection() {
                               <SelectValue placeholder="Select size" />
                             </SelectTrigger>
                           </FormControl>
-                          <SelectContent>
-                            <SelectItem value="1-10">1-10 employees</SelectItem>
-                            <SelectItem value="11-50">11-50 employees</SelectItem>
-                            <SelectItem value="51-200">51-200 employees</SelectItem>
-                            <SelectItem value="201-1000">201-1,000 employees</SelectItem>
-                            <SelectItem value="1000+">1,000+ employees</SelectItem>
+                          <SelectContent className="bg-slate-800 border-slate-700">
+                            <SelectItem value="1-10" className="hover:bg-slate-700">1-10 employees</SelectItem>
+                            <SelectItem value="11-50" className="hover:bg-slate-700">11-50 employees</SelectItem>
+                            <SelectItem value="51-200" className="hover:bg-slate-700">51-200 employees</SelectItem>
+                            <SelectItem value="201-1000" className="hover:bg-slate-700">201-1,000 employees</SelectItem>
+                            <SelectItem value="1000+" className="hover:bg-slate-700">1,000+ employees</SelectItem>
                           </SelectContent>
                         </Select>
                         <FormMessage />

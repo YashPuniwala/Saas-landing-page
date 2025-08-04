@@ -46,7 +46,7 @@ export function Footer() {
   };
 
   return (
-    <footer className="bg-slate-900 text-white py-16">
+    <footer className="bg-slate-900 dark:bg-slate-950 text-white py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-5 gap-8 mb-12">
           {/* Company Info */}
@@ -58,16 +58,16 @@ export function Footer() {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl flex items-center justify-center">
+              <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 dark:from-blue-600 dark:to-purple-600 rounded-xl flex items-center justify-center">
                 <Brain className="text-white" size={24} />
               </div>
-              <span className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+              <span className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 dark:from-blue-300 dark:to-purple-300 bg-clip-text text-transparent">
                 ADMYBRAND
               </span>
             </motion.div>
             
             <motion.p
-              className="text-white/70 mb-6 leading-relaxed"
+              className="text-white/70 dark:text-slate-400 mb-6 leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -87,12 +87,12 @@ export function Footer() {
                 <motion.a
                   key={social.label}
                   href={social.href}
-                  className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-blue-500 transition-colors"
+                  className="w-10 h-10 bg-white/10 dark:bg-slate-800 rounded-lg flex items-center justify-center hover:bg-blue-500 dark:hover:bg-blue-600 transition-colors"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
                   aria-label={social.label}
                 >
-                  <social.icon size={20} />
+                  <social.icon size={20} className="text-white" />
                 </motion.a>
               ))}
             </motion.div>
@@ -111,7 +111,7 @@ export function Footer() {
                 <li key={link.label}>
                   <button
                     onClick={() => scrollToSection(link.href)}
-                    className="text-white/70 hover:text-white transition-colors text-left"
+                    className="text-white/70 dark:text-slate-400 hover:text-white dark:hover:text-slate-100 transition-colors text-left"
                   >
                     {link.label}
                   </button>
@@ -133,7 +133,7 @@ export function Footer() {
                 <li key={link.label}>
                   <button
                     onClick={() => scrollToSection(link.href)}
-                    className="text-white/70 hover:text-white transition-colors text-left"
+                    className="text-white/70 dark:text-slate-400 hover:text-white dark:hover:text-slate-100 transition-colors text-left"
                   >
                     {link.label}
                   </button>
@@ -155,7 +155,7 @@ export function Footer() {
                 <li key={link.label}>
                   <button
                     onClick={() => scrollToSection(link.href)}
-                    className="text-white/70 hover:text-white transition-colors text-left"
+                    className="text-white/70 dark:text-slate-400 hover:text-white dark:hover:text-slate-100 transition-colors text-left"
                   >
                     {link.label}
                   </button>
@@ -167,24 +167,24 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <motion.div
-          className="border-t border-white/10 pt-8"
+          className="border-t border-white/10 dark:border-slate-800 pt-8"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.4 }}
         >
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="text-white/60 text-sm mb-4 md:mb-0">
+            <div className="text-white/60 dark:text-slate-500 text-sm mb-4 md:mb-0">
               © 2024 ADMYBRAND AI Suite. All rights reserved.
             </div>
             <div className="flex space-x-6 text-sm">
-              <a href="#" className="text-white/60 hover:text-white transition-colors">
+              <a href="#" className="text-white/60 dark:text-slate-500 hover:text-white dark:hover:text-slate-300 transition-colors">
                 Privacy Policy
               </a>
-              <a href="#" className="text-white/60 hover:text-white transition-colors">
+              <a href="#" className="text-white/60 dark:text-slate-500 hover:text-white dark:hover:text-slate-300 transition-colors">
                 Terms of Service
               </a>
-              <a href="#" className="text-white/60 hover:text-white transition-colors">
+              <a href="#" className="text-white/60 dark:text-slate-500 hover:text-white dark:hover:text-slate-300 transition-colors">
                 Cookie Policy
               </a>
             </div>

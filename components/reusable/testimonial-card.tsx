@@ -38,7 +38,7 @@ export function TestimonialCard({
             <Star key={i} className="fill-current" size={16} />
           ))}
         </div>
-        <p className="text-slate-700 leading-relaxed italic">
+        <p className="text-slate-700 dark:text-slate-300 leading-relaxed italic">
           "{content}"
         </p>
       </div>
@@ -57,8 +57,8 @@ export function TestimonialCard({
           />
         </motion.div>
         <div>
-          <div className="font-semibold text-slate-900">{author}</div>
-          <div className="text-sm text-slate-600">{role}</div>
+          <div className="font-semibold text-slate-900 dark:text-slate-100">{author}</div>
+          <div className="text-sm text-slate-600 dark:text-slate-400">{role}</div>
         </div>
       </div>
     </GlassCard>

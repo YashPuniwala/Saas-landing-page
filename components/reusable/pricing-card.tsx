@@ -34,7 +34,7 @@ export function PricingCard({
     <GlassCard
       className={cn(
         "p-6 md:p-8 relative",
-        popular && "border-2 border-blue-200 md:scale-105"
+        popular && "border-2 border-blue-200 dark:border-blue-400 md:scale-105"
       )}
       animation={{
         initial: { opacity: 0, y: 30 },
@@ -49,24 +49,26 @@ export function PricingCard({
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: delay + 0.3 }}
         >
-          <div className="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-4 py-1 md:px-6 md:py-2 rounded-full text-xs md:text-sm font-semibold">
+          <div className="bg-gradient-to-r from-blue-500 to-purple-500 dark:from-blue-600 dark:to-purple-600 text-white px-4 py-1 md:px-6 md:py-2 rounded-full text-xs md:text-sm font-semibold">
             Most Popular
           </div>
         </motion.div>
       )}
 
       <div className="text-center">
-        <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-1 md:mb-2">{title}</h3>
-        <p className="text-sm md:text-base text-slate-600 mb-4 md:mb-6">{description}</p>
+        <h3 className="text-xl md:text-2xl font-bold text-slate-900 dark:text-slate-100 mb-1 md:mb-2">{title}</h3>
+        <p className="text-sm md:text-base text-slate-600 dark:text-slate-400 mb-4 md:mb-6">{description}</p>
         
         <div className="mb-6 md:mb-8">
           <span className={cn(
             "text-4xl md:text-5xl font-bold",
-            popular ? "bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent" : "text-slate-900"
+            popular 
+              ? "bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent" 
+              : "text-slate-900 dark:text-slate-100"
           )}>
             {price}
           </span>
-          {period && <span className="text-sm md:text-base text-slate-600">{period}</span>}
+          {period && <span className="text-sm md:text-base text-slate-600 dark:text-slate-400">{period}</span>}
         </div>
         
         <GradientButton
@@ -79,19 +81,19 @@ export function PricingCard({
       </div>
 
       <div className="mt-6 md:mt-8">
-        <h4 className="font-semibold text-slate-900 text-sm md:text-base mb-3 md:mb-4">
+        <h4 className="font-semibold text-slate-900 dark:text-slate-100 text-sm md:text-base mb-3 md:mb-4">
           {popular ? "Everything in Starter, plus:" : "Features included:"}
         </h4>
         <ul className="space-y-2 md:space-y-3">
           {features.map((feature, index) => (
             <motion.li
               key={index}
-              className="flex items-start text-slate-600 text-sm md:text-base"
+              className="flex items-start text-slate-600 dark:text-slate-300 text-sm md:text-base"
               initial={{ opacity: 0, x: -10 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: delay + 0.1 * index }}
             >
-              <Check className="text-green-500 mr-2 md:mr-3 flex-shrink-0 mt-0.5" size={14} />
+              <Check className="text-green-500 dark:text-green-400 mr-2 md:mr-3 flex-shrink-0 mt-0.5" size={14} />
               {feature}
             </motion.li>
           ))}

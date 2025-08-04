@@ -1,3 +1,5 @@
+'use client';
+
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import React from "react";
@@ -21,7 +23,9 @@ export function GlassCard({
     <motion.div
       className={cn(
         "rounded-3xl border",
-        variant === "light" ? "glass border-white/30" : "glass-dark border-white/10",
+        variant === "light" 
+          ? "glass border-white/30 dark:border-white/10" 
+          : "glass-dark border-white/10",
         hover && "hover:shadow-2xl transition-all duration-500",
         className
       )}

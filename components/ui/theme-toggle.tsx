@@ -22,15 +22,17 @@ export function ThemeToggle() {
     );
   }
 
+  const toggleTheme = () => setTheme(theme === "light" ? "dark" : "light");
+
   return (
     <Button
       variant="outline"
       size="icon"
-      onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+      onClick={toggleTheme}
       className="relative overflow-hidden"
     >
       <motion.div
-        initial={false}
+        key="sun"
         animate={{
           rotate: theme === "dark" ? 180 : 0,
           scale: theme === "dark" ? 0 : 1,
@@ -38,10 +40,10 @@ export function ThemeToggle() {
         transition={{ duration: 0.3 }}
         className="absolute inset-0 flex items-center justify-center"
       >
-        <Sun className="h-4 w-4" />
+      <Moon className="h-4 w-4" />
       </motion.div>
       <motion.div
-        initial={false}
+        key="moon"
         animate={{
           rotate: theme === "light" ? -180 : 0,
           scale: theme === "light" ? 0 : 1,
@@ -49,7 +51,7 @@ export function ThemeToggle() {
         transition={{ duration: 0.3 }}
         className="absolute inset-0 flex items-center justify-center"
       >
-        <Moon className="h-4 w-4" />
+        <Sun className="h-4 w-4" />
       </motion.div>
     </Button>
   );

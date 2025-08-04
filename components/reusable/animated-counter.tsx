@@ -1,5 +1,6 @@
 'use client';
 
+import { cn } from "@/lib/utils";
 import { motion, useInView, useMotionValue, useSpring } from "framer-motion";
 import React, { useEffect, useRef } from "react";
 
@@ -35,5 +36,15 @@ export function AnimatedCounter({
     });
   }, [springValue, suffix]);
 
-  return <span ref={ref} className={className}>0{suffix}</span>;
+  return (
+    <span 
+      ref={ref} 
+      className={cn(
+        "text-slate-900 dark:text-slate-100",
+        className
+      )}
+    >
+      0{suffix}
+    </span>
+  );
 }

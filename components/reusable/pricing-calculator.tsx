@@ -25,13 +25,15 @@ export function PricingCalculator() {
   return (
     <GlassCard className="p-4 sm:p-6 max-w-2xl mx-auto mb-8 md:mb-12">
       <div className="flex items-center gap-2 mb-3 md:mb-4">
-        <Calculator className="text-blue-600" size={18} />
-        <h3 className="text-base md:text-lg font-semibold text-slate-900">Calculate Your ROI</h3>
+        <Calculator className="text-blue-600 dark:text-blue-400" size={18} />
+        <h3 className="text-base md:text-lg font-semibold text-slate-900 dark:text-slate-100">
+          Calculate Your ROI
+        </h3>
       </div>
       
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-4 mb-4 md:mb-6">
         <div>
-          <Label htmlFor="adSpend" className="text-xs md:text-sm font-medium text-slate-700">
+          <Label htmlFor="adSpend" className="text-xs md:text-sm font-medium text-slate-700 dark:text-slate-300">
             Monthly Ad Spend
           </Label>
           <Input
@@ -39,12 +41,12 @@ export function PricingCalculator() {
             type="number"
             value={adSpend}
             onChange={(e) => setAdSpend(Number(e.target.value))}
-            className="mt-1 h-9 md:h-10 text-sm"
+            className="mt-1 h-9 md:h-10 text-sm bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700"
           />
         </div>
         
         <div>
-          <Label htmlFor="currentROI" className="text-xs md:text-sm font-medium text-slate-700">
+          <Label htmlFor="currentROI" className="text-xs md:text-sm font-medium text-slate-700 dark:text-slate-300">
             Current ROI (%)
           </Label>
           <Input
@@ -52,37 +54,57 @@ export function PricingCalculator() {
             type="number"
             value={currentROI}
             onChange={(e) => setCurrentROI(Number(e.target.value))}
-            className="mt-1 h-9 md:h-10 text-sm"
+            className="mt-1 h-9 md:h-10 text-sm bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700"
           />
         </div>
         
         <div>
-          <Label htmlFor="improvement" className="text-xs md:text-sm font-medium text-slate-700">
+          <Label htmlFor="improvement" className="text-xs md:text-sm font-medium text-slate-700 dark:text-slate-300">
             Improvement Goal
           </Label>
           <Select value={improvement.toString()} onValueChange={(value) => setImprovement(Number(value))}>
-            <SelectTrigger className="mt-1 h-9 md:h-10 text-sm">
-              <SelectValue />
+            <SelectTrigger className="mt-1 h-9 md:h-10 text-sm bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700">
+              <SelectValue placeholder="Select improvement" />
             </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="25">25% increase</SelectItem>
-              <SelectItem value="50">50% increase</SelectItem>
-              <SelectItem value="75">75% increase</SelectItem>
-              <SelectItem value="100">100% increase</SelectItem>
+            <SelectContent className="bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700">
+              <SelectItem 
+                value="25" 
+                className="focus:bg-slate-100 dark:focus:bg-slate-700"
+              >
+                25% increase
+              </SelectItem>
+              <SelectItem 
+                value="50" 
+                className="focus:bg-slate-100 dark:focus:bg-slate-700"
+              >
+                50% increase
+              </SelectItem>
+              <SelectItem 
+                value="75" 
+                className="focus:bg-slate-100 dark:focus:bg-slate-700"
+              >
+                75% increase
+              </SelectItem>
+              <SelectItem 
+                value="100" 
+                className="focus:bg-slate-100 dark:focus:bg-slate-700"
+              >
+                100% increase
+              </SelectItem>
             </SelectContent>
           </Select>
         </div>
       </div>
       
       <motion.div
-        className="p-3 md:p-4 bg-blue-50 rounded-lg md:rounded-xl text-center"
+        className="p-3 md:p-4 bg-blue-50 dark:bg-blue-900/30 rounded-lg md:rounded-xl text-center border border-blue-100 dark:border-blue-800/50"
         animate={{ scale: [1, 1.02, 1] }}
         transition={{ duration: 2, repeat: Infinity }}
       >
-        <div className="text-2xl md:text-3xl font-bold text-blue-600">
+        <div className="text-2xl md:text-3xl font-bold text-blue-600 dark:text-blue-400">
           ${monthlyGain.toLocaleString()}
         </div>
-        <div className="text-xs md:text-sm text-slate-600">
+        <div className="text-xs md:text-sm text-slate-600 dark:text-slate-400">
           Potential Monthly Revenue Increase
         </div>
       </motion.div>

@@ -10,7 +10,7 @@ import { fadeInUp, staggerContainer } from "@/lib/animations";
 export function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
-   const faqs = [
+  const faqs = [
     {
       question: "How does ADMYBRAND's AI differ from other marketing tools?",
       answer: "Our AI is trained on millions of high-performing campaigns across all industries and continuously learns from real-time performance data. Unlike generic tools, our AI understands context, brand voice, and audience psychology to create campaigns that truly resonate with your target market. Plus, our proprietary optimization algorithms adjust in real-time for maximum ROI."
@@ -42,7 +42,7 @@ export function FAQSection() {
   };
 
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-br from-slate-50 to-blue-50">
+    <section className="py-16 md:py-24 bg-gradient-to-br from-slate-50 to-blue-50 dark:from-slate-900 dark:to-blue-900/20">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -59,17 +59,17 @@ export function FAQSection() {
           </motion.div>
           
           <motion.h2
-            className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-4 md:mb-6"
+            className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-slate-100 mb-4 md:mb-6"
             variants={fadeInUp}
           >
             Frequently Asked
-            <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-purple-600 to-blue-600 dark:from-purple-500 dark:to-blue-500 bg-clip-text text-transparent">
               {" "}Questions
             </span>
           </motion.h2>
           
           <motion.p
-            className="text-lg md:text-xl text-slate-600 leading-relaxed"
+            className="text-lg md:text-xl text-slate-600 dark:text-slate-400 leading-relaxed"
             variants={fadeInUp}
           >
             Everything you need to know about ADMYBRAND AI Suite.
@@ -88,19 +88,19 @@ export function FAQSection() {
             >
               <GlassCard className="overflow-hidden">
                 <button
-                  className="w-full px-4 py-4 md:px-6 md:py-5 lg:px-8 lg:py-6 text-left flex items-center justify-between hover:bg-white/20 transition-colors"
+                  className="w-full px-4 py-4 md:px-6 md:py-5 lg:px-8 lg:py-6 text-left flex items-center justify-between hover:bg-white/20 dark:hover:bg-slate-800/20 transition-colors"
                   onClick={() => toggleFAQ(index)}
                   aria-expanded={openIndex === index}
                   aria-controls={`faq-${index}`}
                 >
-                  <span className="text-base md:text-lg font-semibold text-slate-900 pr-4">
+                  <span className="text-base md:text-lg font-semibold text-slate-900 dark:text-slate-100 pr-4">
                     {faq.question}
                   </span>
                   <motion.div
                     animate={{ rotate: openIndex === index ? 180 : 0 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <ChevronDown className="text-slate-600 flex-shrink-0" size={18} />
+                    <ChevronDown className="text-slate-600 dark:text-slate-400 flex-shrink-0" size={18} />
                   </motion.div>
                 </button>
                 
@@ -115,7 +115,7 @@ export function FAQSection() {
                       className="overflow-hidden"
                     >
                       <div className="px-4 md:px-6 lg:px-8 pb-4 md:pb-6">
-                        <p className="text-sm md:text-base text-slate-600 leading-relaxed">
+                        <p className="text-sm md:text-base text-slate-600 dark:text-slate-400 leading-relaxed">
                           {faq.answer}
                         </p>
                       </div>

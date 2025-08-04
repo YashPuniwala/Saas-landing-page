@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import React from "react";
 import { motion } from "framer-motion";
@@ -85,7 +85,7 @@ export function PricingSection() {
   return (
     <section
       id="pricing"
-      className="py-16 md:py-24 bg-gradient-to-br from-slate-50 to-blue-50 relative"
+      className="py-16 md:py-24 bg-gradient-to-br from-slate-50 to-blue-50 dark:from-slate-900 dark:to-blue-900/20 relative"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
@@ -107,18 +107,18 @@ export function PricingSection() {
           </motion.div>
 
           <motion.h2
-            className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-4 md:mb-6"
+            className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-slate-100 mb-4 md:mb-6"
             variants={fadeInUp}
           >
             Choose Your
-            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent">
               {" "}
               Growth Plan
             </span>
           </motion.h2>
 
           <motion.p
-            className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed mb-6 md:mb-8"
+            className="text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed mb-6 md:mb-8"
             variants={fadeInUp}
           >
             Start free and scale as you grow. All plans include our core AI
@@ -155,28 +155,24 @@ export function PricingSection() {
         >
           <GlassCard className="overflow-hidden">
             <div className="p-4 sm:p-6 md:p-8">
-              <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-4 md:mb-6 text-center">
+              <h3 className="text-xl md:text-2xl font-bold text-slate-900 dark:text-slate-100 mb-4 md:mb-6 text-center">
                 Feature Comparison
               </h3>
               <div className="overflow-x-auto pb-2">
-                {" "}
-                {/* Added pb-2 for scrollbar spacing */}
                 <div className="min-w-full inline-block align-middle">
-                  {" "}
-                  {/* Wrapper div for better table control */}
                   <table className="w-full">
                     <thead>
-                      <tr className="border-b border-slate-200">
-                        <th className="text-left py-3 md:py-4 pr-3 font-semibold text-slate-900 text-sm md:text-base w-1/2 sm:w-auto">
+                      <tr className="border-b border-slate-200 dark:border-slate-700">
+                        <th className="text-left py-3 md:py-4 pr-3 font-semibold text-slate-900 dark:text-slate-100 text-sm md:text-base w-1/2 sm:w-auto">
                           Features
                         </th>
-                        <th className="text-center py-3 md:py-4 px-2 font-semibold text-slate-900 text-sm md:text-base min-w-[100px]">
+                        <th className="text-center py-3 md:py-4 px-2 font-semibold text-slate-900 dark:text-slate-100 text-sm md:text-base min-w-[100px]">
                           Starter
                         </th>
-                        <th className="text-center py-3 md:py-4 px-2 font-semibold text-blue-600 text-sm md:text-base min-w-[100px]">
+                        <th className="text-center py-3 md:py-4 px-2 font-semibold text-blue-600 dark:text-blue-400 text-sm md:text-base min-w-[100px]">
                           Professional
                         </th>
-                        <th className="text-center py-3 md:py-4 pl-2 font-semibold text-slate-900 text-sm md:text-base min-w-[100px]">
+                        <th className="text-center py-3 md:py-4 pl-2 font-semibold text-slate-900 dark:text-slate-100 text-sm md:text-base min-w-[100px]">
                           Enterprise
                         </th>
                       </tr>
@@ -185,43 +181,43 @@ export function PricingSection() {
                       {comparisonFeatures.map((item, index) => (
                         <motion.tr
                           key={item.feature}
-                          className="border-b border-slate-100"
+                          className="border-b border-slate-100 dark:border-slate-700"
                           initial={{ opacity: 0, x: -20 }}
                           whileInView={{ opacity: 1, x: 0 }}
                           viewport={{ once: true }}
                           transition={{ duration: 0.4, delay: index * 0.1 }}
                         >
-                          <td className="py-3 md:py-4 pr-3 text-slate-700 text-sm md:text-base">
+                          <td className="py-3 md:py-4 pr-3 text-slate-700 dark:text-slate-300 text-sm md:text-base">
                             {item.feature}
                           </td>
                           <td className="text-center py-3 md:py-4 px-2">
                             {item.starter ? (
                               <Check
-                                className="text-green-600 mx-auto"
+                                className="text-green-600 dark:text-green-400 mx-auto"
                                 size={14}
                               />
                             ) : (
-                              <X className="text-slate-500 mx-auto" size={14} />
+                              <X className="text-slate-500 dark:text-slate-400 mx-auto" size={14} />
                             )}
                           </td>
                           <td className="text-center py-3 md:py-4 px-2">
                             {item.pro ? (
                               <Check
-                                className="text-green-600 mx-auto"
+                                className="text-green-600 dark:text-green-400 mx-auto"
                                 size={14}
                               />
                             ) : (
-                              <X className="text-slate-500 mx-auto" size={14} />
+                              <X className="text-slate-500 dark:text-slate-400 mx-auto" size={14} />
                             )}
                           </td>
                           <td className="text-center py-3 md:py-4 pl-2">
                             {item.enterprise ? (
                               <Check
-                                className="text-green-600 mx-auto"
+                                className="text-green-600 dark:text-green-400 mx-auto"
                                 size={14}
                               />
                             ) : (
-                              <X className="text-slate-500 mx-auto" size={14} />
+                              <X className="text-slate-500 dark:text-slate-400 mx-auto" size={14} />
                             )}
                           </td>
                         </motion.tr>

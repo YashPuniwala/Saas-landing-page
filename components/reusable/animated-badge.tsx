@@ -2,7 +2,7 @@
 
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
-import { DivideIcon as LucideIcon } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import React from "react";
 
 interface AnimatedBadgeProps {
@@ -21,10 +21,10 @@ export function AnimatedBadge({
   animate = true
 }: AnimatedBadgeProps) {
   const variants = {
-    primary: "bg-blue-100 text-blue-700 border-blue-200",
-    secondary: "bg-purple-100 text-purple-700 border-purple-200",
-    accent: "bg-cyan-100 text-cyan-700 border-cyan-200",
-    success: "bg-emerald-100 text-emerald-700 border-emerald-200"
+    primary: "bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 border-blue-200 dark:border-blue-800",
+    secondary: "bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 border-purple-200 dark:border-purple-800",
+    accent: "bg-cyan-100 dark:bg-cyan-900/30 text-cyan-700 dark:text-cyan-300 border-cyan-200 dark:border-cyan-800",
+    success: "bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 border-emerald-200 dark:border-emerald-800"
   };
 
   return (

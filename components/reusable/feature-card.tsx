@@ -3,7 +3,6 @@
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import type { LucideIcon } from "lucide-react";
-import { DivideIcon } from "lucide-react";
 import { ArrowRight } from "lucide-react";
 import React from "react";
 import { GlassCard } from "./glass-card";
@@ -47,15 +46,15 @@ export function FeatureCard({
         <Icon className="text-white text-lg sm:text-xl md:text-2xl" size={20} />
       </motion.div>
       
-      <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-slate-900 mb-2 sm:mb-3 md:mb-4">
+      <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-slate-900 dark:text-slate-100 mb-2 sm:mb-3 md:mb-4">
         {title}
       </h3>
-      <p className="text-sm sm:text-base text-slate-600 leading-relaxed mb-4 sm:mb-6 line-clamp-3">
+      <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed mb-4 sm:mb-6 line-clamp-3">
         {description}
       </p>
       
       <motion.div
-        className="flex items-center text-blue-600 font-medium group-hover:text-blue-700 transition-colors cursor-pointer text-sm sm:text-base"
+        className="flex items-center text-blue-600 dark:text-blue-400 font-medium group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors cursor-pointer text-sm sm:text-base"
         onClick={onClick}
       >
         <span>Learn more</span>

@@ -58,7 +58,7 @@ export function TestimonialsSection() {
   const duplicated = [...testimonials, ...testimonials]; // double for infinite loop illusion
 
   return (
-    <section id="testimonials" className="py-16 md:py-24 relative overflow-hidden">
+    <section id="testimonials" className="py-16 md:py-24 relative overflow-hidden bg-white dark:bg-slate-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header */}
@@ -76,15 +76,15 @@ export function TestimonialsSection() {
           </motion.div>
 
           <motion.h2
-            className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-4 md:mb-6"
+            className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-slate-100 mb-4 md:mb-6"
             variants={fadeInUp}
           >
             Trusted by Marketing Teams
-            <span className="bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent"> Worldwide</span>
+            <span className="bg-gradient-to-r from-cyan-600 to-blue-600 dark:from-cyan-400 dark:to-blue-400 bg-clip-text text-transparent"> Worldwide</span>
           </motion.h2>
 
           <motion.p
-            className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed"
+            className="text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed"
             variants={fadeInUp}
           >
             See how ADMYBRAND AI Suite is transforming marketing results for companies of all sizes.
@@ -132,14 +132,14 @@ export function TestimonialsSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <div className="text-2xl md:text-3xl lg:text-4xl font-bold text-blue-600 mb-1 md:mb-2">
+              <div className="text-2xl md:text-3xl lg:text-4xl font-bold text-blue-600 dark:text-blue-400 mb-1 md:mb-2">
                 {stat.suffix === "B" ? (
                   <span>$<AnimatedCounter value={stat.value} suffix={stat.suffix} /></span>
                 ) : (
                   <AnimatedCounter value={stat.value} suffix={stat.suffix} />
                 )}
               </div>
-              <div className="text-sm md:text-base text-slate-600">{stat.label}</div>
+              <div className="text-sm md:text-base text-slate-600 dark:text-slate-400">{stat.label}</div>
             </motion.div>
           ))}
         </motion.div>

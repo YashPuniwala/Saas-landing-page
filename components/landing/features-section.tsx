@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import {
   Bot,
@@ -22,47 +22,47 @@ export function FeaturesSection() {
       description:
         "Create high-converting ad campaigns in seconds with our advanced AI that learns from millions of successful campaigns.",
       icon: Bot,
-      gradient: "bg-gradient-to-r from-blue-500 to-blue-600",
+      gradient: "bg-gradient-to-r from-blue-500 to-blue-600 dark:from-blue-600 dark:to-blue-700",
     },
     {
       title: "Smart Analytics",
       description:
         "Get actionable insights with predictive analytics that identify opportunities and optimize performance automatically.",
       icon: ChartLine,
-      gradient: "bg-gradient-to-r from-purple-500 to-purple-600",
+      gradient: "bg-gradient-to-r from-purple-500 to-purple-600 dark:from-purple-600 dark:to-purple-700",
     },
     {
       title: "Audience Intelligence",
       description:
         "Discover and target your ideal customers with AI-powered audience segmentation and behavioral analysis.",
       icon: Users,
-      gradient: "bg-gradient-to-r from-cyan-500 to-cyan-600",
+      gradient: "bg-gradient-to-r from-cyan-500 to-cyan-600 dark:from-cyan-600 dark:to-cyan-700",
     },
     {
       title: "Creative Studio",
       description:
         "Generate stunning visuals, copy, and video content with AI that understands your brand voice and style.",
       icon: Palette,
-      gradient: "bg-gradient-to-r from-emerald-500 to-emerald-600",
+      gradient: "bg-gradient-to-r from-emerald-500 to-emerald-600 dark:from-emerald-600 dark:to-emerald-700",
     },
     {
       title: "Auto-Optimization",
       description:
         "Let AI continuously optimize your campaigns for maximum ROI with real-time bidding and budget allocation.",
       icon: RotateCcw,
-      gradient: "bg-gradient-to-r from-pink-500 to-pink-600",
+      gradient: "bg-gradient-to-r from-pink-500 to-pink-600 dark:from-pink-600 dark:to-pink-700",
     },
     {
       title: "Brand Protection",
       description:
         "Monitor and protect your brand reputation across all channels with AI-powered sentiment analysis and alerts.",
       icon: Shield,
-      gradient: "bg-gradient-to-r from-orange-500 to-orange-600",
+      gradient: "bg-gradient-to-r from-orange-500 to-orange-600 dark:from-orange-600 dark:to-orange-700",
     },
   ];
 
   return (
-    <section id="features" className="py-16 md:py-24 relative">
+    <section id="features" className="py-16 md:py-24 relative bg-white dark:bg-slate-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -83,18 +83,18 @@ export function FeaturesSection() {
           </motion.div>
 
           <motion.h2
-            className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-4 md:mb-6"
+            className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-slate-100 mb-4 md:mb-6"
             variants={fadeInUp}
           >
             Everything You Need to
-            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent">
               {" "}
               Scale Your Marketing
             </span>
           </motion.h2>
 
           <motion.p
-            className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed"
+            className="text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed"
             variants={fadeInUp}
           >
             Our AI-powered suite combines cutting-edge technology with intuitive
