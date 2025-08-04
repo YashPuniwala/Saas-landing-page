@@ -13,7 +13,6 @@ A sleek, animated SaaS landing page for **ADMYBRAND AI Saas-Landing-Page** — a
 
 ### ✨ Feature & Pricing Cards  
 ![PricingSection](./public/pricing.png) 
-(./public/pricing2.png)
 
 ### 📱 Mobile Responsive Layout  
 ![Mobile Responsive](./public/mobile-responsive.png)
